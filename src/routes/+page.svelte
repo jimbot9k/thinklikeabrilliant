@@ -355,11 +355,11 @@
 	}
 
 	.score-tag {
-		display: inline-block;
+		display: block;
 		font-size: 0.8rem !important;
 		color: #666 !important;
 		font-variant-numeric: tabular-nums;
-		margin-bottom: 2rem !important;
+		margin-bottom: 1.25rem !important;
 	}
 
 	.restart-btn {
@@ -380,7 +380,7 @@
 	}
 
 	.explore-link {
-		display: inline-block;
+		display: block;
 		margin-bottom: 1.5rem;
 		font-size: 0.9rem;
 		text-decoration: none;

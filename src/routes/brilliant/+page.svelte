@@ -51,6 +51,7 @@
 		<p>You will be right about things before other people. This is both a superpower and a source of unending low-level frustration that you have learned to manage through journaling, walks, and occasionally being right out loud when the stakes are high enough to justify it.</p>
 		<p>The owls respect you. The horse's email is waiting. The wizard's offer stands.</p>
 		<p>Go be brilliant. You already are.</p>
+		<a href="/" class="take-again">Take it again</a>
 	</article>
 </main>
 
@@ -124,5 +125,23 @@
 
 	strong {
 		color: #e8e8e8;
+	}
+
+	.take-again {
+		display: inline-block;
+		margin-top: 2rem;
+		background: #6c63ff;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 10px;
+		padding: 0.8rem 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		transition: background 0.15s, transform 0.1s;
+	}
+
+	.take-again:hover {
+		background: #5a52e0;
+		transform: translateY(-1px);
 	}
 </style>

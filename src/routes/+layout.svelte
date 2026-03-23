@@ -21,7 +21,7 @@
 </svelte:head>
 
 <header>
-	<span class="logo">are you a brilliant?</span>
+	<a href="/" class="logo">brilliant</a>
 </header>
 
 {@render children()}
@@ -45,5 +45,6 @@
 		letter-spacing: 0.08em;
 		text-transform: lowercase;
 		color: #a78bfa;
+		text-decoration: none;
 	}
 </style>
