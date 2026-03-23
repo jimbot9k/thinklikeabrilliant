@@ -1,93 +1,93 @@
 <script lang="ts">
 	const questions = [
 		{
-			text: "You're handed a tough problem you've never seen before. What's your first move?",
+			text: "You wake up and a pelican is sitting on your chest. It is holding your phone. It does not look friendly. You:",
 			answers: [
-				{ text: "Dive in headfirst — instructions are for cowards.", score: -2 },
-				{ text: "Skim the brief and wing the rest.", score: -1 },
-				{ text: "Read it carefully, sketch a rough plan, then start.", score: 1 },
-				{ text: "Research similar problems, map the unknowns, then act deliberately.", score: 2 }
+				{ text: "Immediately try to rizz it up. You speak bird.", score: -2 },
+				{ text: "Scream 'no cap bro what is this' until the situation resolves itself.", score: -1 },
+				{ text: "Stay calm, assess the vibe, and carefully negotiate your phone back.", score: 1 },
+				{ text: "Observe its body language, identify what it wants, and execute a strategic retrieval plan.", score: 2 }
 			]
 		},
 		{
-			text: "Someone disagrees with your opinion in a meeting. You...",
+			text: "A wizard slides into your DMs and offers you infinite knowledge about ONE topic. You have four seconds. You:",
 			answers: [
-				{ text: "Loudly insist you're right until they give up.", score: -2 },
-				{ text: "Get a bit defensive, but eventually let it slide.", score: -1 },
-				{ text: "Ask them to explain their reasoning.", score: 1 },
-				{ text: "Update your view on the spot if their argument is stronger.", score: 2 }
+				{ text: "Reply 'W' and type the first word in your head. It is 'cereal'.", score: -2 },
+				{ text: "Say 'vibes' and spend the rest of your life knowing everything about vibes.", score: -1 },
+				{ text: "Ask if 'everything' counts. Stall. Negotiate. Use the four seconds wisely.", score: 1 },
+				{ text: "Instantly identify the highest-leverage domain of knowledge and lock it in. No hesitation.", score: 2 }
 			]
 		},
 		{
-			text: "You just got a new gadget. What do you do?",
+			text: "You open TikTok and every single video is just someone confidently explaining something completely wrong. You:",
 			answers: [
-				{ text: "Turn it on and mash every button until something happens.", score: -2 },
-				{ text: "Scan the quick-start guide only.", score: -1 },
-				{ text: "Read the manual before using it.", score: 1 },
-				{ text: "Look up reviews, best practices, and edge cases before even unboxing.", score: 2 }
+				{ text: "Agree with all of them. The confidence is contagious and honestly kind of inspiring.", score: -2 },
+				{ text: "Feel weird about it but keep scrolling. Maybe they know something you don't.", score: -1 },
+				{ text: "Fact-check the ones that seem most sus before resharing anything.", score: 1 },
+				{ text: "Track down primary sources, check credentials, and leave politely cited corrections.", score: 2 }
 			]
 		},
 		{
-			text: "How do you make a big life decision?",
+			text: "Your shadow has been making different life choices than you for three years. Its credit score is higher and it has a gym membership. You:",
 			answers: [
-				{ text: "Pure gut feeling — overthinking kills the vibe.", score: -2 },
-				{ text: "Ask one friend and go with whatever they say.", score: -1 },
-				{ text: "List the pros and cons, then decide.", score: 1 },
-				{ text: "Build a decision framework comparing multiple factors and second-order effects.", score: 2 }
+				{ text: "Call it out publicly. This shadow is NOT that girl.", score: -2 },
+				{ text: "Feel personally attacked, post a vague tweet about betrayal, move on.", score: -1 },
+				{ text: "Respectfully ask what it's been doing differently and take notes.", score: 1 },
+				{ text: "Request a full breakdown of its decisions, identify divergence points, and adapt immediately.", score: 2 }
 			]
 		},
 		{
-			text: "You need to learn something completely new. Your approach?",
+			text: "A horse sends you a formal email with read-receipts on. Subject line: 'Regarding Your Recent Choices'. You:",
 			answers: [
-				{ text: "You'll figure it out as problems come — no prep needed.", score: -2 },
-				{ text: "Watch a few random videos and hope it clicks.", score: -1 },
-				{ text: "Find a structured course and work through it properly.", score: 1 },
-				{ text: "Study the foundational principles first, then layer in techniques.", score: 2 }
+				{ text: "Leave it on read. You are NOT doing this today.", score: -2 },
+				{ text: "Open it, get to paragraph two, close it, tell yourself you'll deal with it later.", score: -1 },
+				{ text: "Read the whole thing even though it's uncomfortable. Accountability era.", score: 1 },
+				{ text: "Read it thoroughly, draft a structured response, and schedule a follow-up meeting.", score: 2 }
 			]
 		},
 		{
-			text: "You lose badly at something. Your reaction?",
+			text: "Your friend group chat is going absolutely feral over a statistic someone screenshot from a random account with 47 followers. You:",
 			answers: [
-				{ text: "Blame the rules, the other players, or cosmic misfortune.", score: -2 },
-				{ text: "Feel bad for a bit, then move on without much reflection.", score: -1 },
-				{ text: "Think through what you could have done differently.", score: 1 },
-				{ text: "Systematically analyze your mistakes and deliberately practice weak spots.", score: 2 }
+				{ text: "Add three fire emojis and help it spread. You are a culture-shaper.", score: -2 },
+				{ text: "Laugh-react and move on. Probably true enough.", score: -1 },
+				{ text: "Google it before adding to the chaos.", score: 1 },
+				{ text: "Find the original study, check the sample size and methodology, and post the actual context.", score: 2 }
 			]
 		},
 		{
-			text: "A confident friend gives you advice that sounds a bit off. You...",
+			text: "You're in a debate and thirty seconds in you realise the other person is completely right and you are very wrong. You:",
 			answers: [
-				{ text: "Follow it anyway — their confidence is convincing.", score: -2 },
-				{ text: "Follow it, but mentally bookmark who to blame if it goes wrong.", score: -1 },
-				{ text: "Politely push back and check a couple of other sources.", score: 1 },
-				{ text: "Independently verify the claim before making any decision.", score: 2 }
+				{ text: "Double down harder. Backing out now would be major L behaviour.", score: -2 },
+				{ text: "Go quiet, change the subject, and hope nobody clocked what happened.", score: -1 },
+				{ text: "Concede the point with your dignity mostly intact.", score: 1 },
+				{ text: "Concede immediately, compliment their argument, and ask them to explain more. Secure in yourself.", score: 2 }
 			]
 		},
 		{
-			text: "How do you handle a project with a hard deadline?",
+			text: "Scientists announce that every decision you made on a Tuesday was wrong. All of them. Every single one. You:",
 			answers: [
-				{ text: "Start the night before — deadline pressure is your superpower.", score: -2 },
-				{ text: "Start a few days early and rush through the hard parts.", score: -1 },
-				{ text: "Break it into milestones and work through it steadily.", score: 1 },
-				{ text: "Build in buffer time, review early drafts, and iterate before submitting.", score: 2 }
+				{ text: "Immediately cancel Tuesdays within your household. It's giving restructure.", score: -2 },
+				{ text: "Gaslight yourself into thinking most Tuesdays were actually fine. Move on.", score: -1 },
+				{ text: "Sit down and genuinely review your Tuesday decisions to find the pattern.", score: 1 },
+				{ text: "Systemically analyse the Tuesday error pattern, build a decision checklist, and deploy it.", score: 2 }
 			]
 		},
 		{
-			text: "You see a wild statistic shared online. What do you do?",
+			text: "You're 40 minutes into a very confident presentation about cheese when you realize literally nothing you've said is accurate. You:",
 			answers: [
-				{ text: "Repost it immediately — it's too good not to share.", score: -2 },
-				{ text: "Mention it in conversation; it's probably true.", score: -1 },
-				{ text: "Google it before repeating it to anyone.", score: 1 },
-				{ text: "Track down the primary source, check the sample size and methodology.", score: 2 }
+				{ text: "Increase the confidence. You cannot let them see weakness. Gaslight the room.", score: -2 },
+				{ text: "Say 'anyway' and pivot to Q&A. Let the audience figure it out.", score: -1 },
+				{ text: "Stop, acknowledge the L, and give a quick corrected summary.", score: 1 },
+				{ text: "Stop mid-sentence, explain exactly what went wrong, provide the correct information, and apologise to the cheese.", score: 2 }
 			]
 		},
 		{
-			text: "What's your honest relationship with being wrong?",
+			text: "You show up to what you thought was a dinner party and it's actually a job interview for a job you don't want, run by a panel of owls. You:",
 			answers: [
-				{ text: "You're rarely wrong — and when you are, nobody noticed.", score: -2 },
-				{ text: "It's embarrassing. You'd rather quietly avoid the topic.", score: -1 },
-				{ text: "It happens. You correct yourself and move on.", score: 1 },
-				{ text: "Being wrong is a gift — it's how you update your model of reality.", score: 2 }
+				{ text: "Go absolutely unhinged in the interview. You are built different.", score: -2 },
+				{ text: "Half-try in a way that communicates 'I'm here but I'm not here here'.", score: -1 },
+				{ text: "Politely clarify the situation and ask whether attendance is actually mandatory.", score: 1 },
+				{ text: "Assess what the owls need, evaluate whether your skills transfer, and make a conscious decision about engaging.", score: 2 }
 			]
 		}
 	];
@@ -162,7 +162,7 @@
 		{:else}
 			<div class="result" class:brilliant={result === 'brilliant'} class:fool={result === 'fool'}>
 				{#if result === 'brilliant'}
-					<div class="result-icon">🧠</div>
+				<img class="result-img" src="/brilliant.png" alt="Think Like a Brilliant" />
 					<h2>You Think Like a Brilliant.</h2>
 					<p>
 						You approach problems with curiosity, rigor, and patience. You update your beliefs when
@@ -171,7 +171,7 @@
 					</p>
 					<p class="score-tag">Score: +{totalScore}</p>
 				{:else}
-					<div class="result-icon">🃏</div>
+				<img class="result-img" src="/fool.png" alt="Act Like a Fool" />
 					<h2>You Act Like a Fool.</h2>
 					<p>
 						You lead with instinct, confidence, and beautiful recklessness. You don't sweat the
@@ -200,7 +200,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 100vh;
-		padding: 2rem 1rem;
+		padding: 5rem 1rem 2rem;
 		box-sizing: border-box;
 	}
 
@@ -318,9 +318,11 @@
 		padding: 1rem 0;
 	}
 
-	.result-icon {
-		font-size: 4rem;
-		margin-bottom: 1rem;
+	.result-img {
+		width: 100%;
+		border-radius: 10px;
+		margin-bottom: 1.5rem;
+		object-fit: cover;
 	}
 
 	.result h2 {
