@@ -170,6 +170,7 @@
 						don't scare you — they fascinate you.
 					</p>
 					<p class="score-tag">Score: +{totalScore}</p>
+				<a href="/brilliant" class="explore-link brilliant-link">explore what this means →</a>
 				{:else}
 				<img class="result-img" src="/fool.png" alt="Act Like a Fool" />
 					<h2>You Act Like a Fool.</h2>
@@ -178,6 +179,7 @@
 						details — you make the details sweat. The world calls it chaos. You call it Tuesday.
 					</p>
 					<p class="score-tag">Score: {totalScore}</p>
+				<a href="/fool" class="explore-link fool-link">explore what this means →</a>
 				{/if}
 
 				<button class="restart-btn" onclick={restart}>Take it again</button>
@@ -369,6 +371,27 @@
 	.restart-btn:hover {
 		background: #5a52e0;
 		transform: translateY(-1px);
+	}
+
+	.explore-link {
+		display: inline-block;
+		margin-bottom: 1.5rem;
+		font-size: 0.9rem;
+		text-decoration: none;
+		opacity: 0.8;
+		transition: opacity 0.15s;
+	}
+
+	.explore-link:hover {
+		opacity: 1;
+	}
+
+	.brilliant-link {
+		color: #a78bfa;
+	}
+
+	.fool-link {
+		color: #f97316;
 	}
 </style>
 
