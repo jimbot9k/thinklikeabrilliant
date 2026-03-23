@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>Think Like a Brilliant</title>
+	<title>are you a brilliant?</title>
 </svelte:head>
 
 <main>
