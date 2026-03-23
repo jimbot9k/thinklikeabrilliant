@@ -21,7 +21,8 @@
 </svelte:head>
 
 <header>
-	<a href="/" class="logo">brilliant</a>
+	<a href="/" class="logo">are you a brilliant?</a>
+	<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer">© jimbot9k</a>
 </header>
 
 {@render children()}
@@ -37,6 +38,9 @@
 		background: rgba(13, 13, 13, 0.85);
 		backdrop-filter: blur(8px);
 		border-bottom: 1px solid #1e1e1e;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.logo {
@@ -46,5 +50,16 @@
 		text-transform: lowercase;
 		color: #a78bfa;
 		text-decoration: none;
+	}
+
+	.copyright {
+		font-size: 0.8rem;
+		color: #555;
+		text-decoration: none;
+		transition: color 0.15s;
+	}
+
+	.copyright:hover {
+		color: #888;
 	}
 </style>
