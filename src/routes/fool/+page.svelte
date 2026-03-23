@@ -1,5 +1,13 @@
 <svelte:head>
 	<title>The Fool — A Celebration</title>
+	<meta name="description" content="A thorough, loving, and only slightly concerned examination of the Fool. The pelican has declined to comment." />
+	<meta property="og:title" content="The Fool — A Celebration" />
+	<meta property="og:description" content="A thorough, loving, and only slightly concerned examination of the Fool. The pelican has declined to comment." />
+	<meta property="og:url" content="https://thinklikeabrilliant.com/fool" />
+	<meta property="og:image" content="/fool.png" />
+	<meta name="twitter:title" content="The Fool — A Celebration" />
+	<meta name="twitter:description" content="A thorough, loving, and only slightly concerned examination of the Fool. The pelican has declined to comment." />
+	<meta name="twitter:image" content="/fool.png" />
 </svelte:head>
 
 <main>

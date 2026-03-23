@@ -130,6 +130,12 @@
 
 <svelte:head>
 	<title>are you a brilliant?</title>
+	<meta name="description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
+	<meta property="og:title" content="are you a brilliant?" />
+	<meta property="og:description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
+	<meta property="og:url" content="https://thinklikeabrilliant.com/" />
+	<meta name="twitter:title" content="are you a brilliant?" />
+	<meta name="twitter:description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
 </svelte:head>
 
 <main>

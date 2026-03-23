@@ -6,6 +6,18 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+
+	<!-- Robots -->
+	<meta name="robots" content="index, follow" />
+
+	<!-- Default social metadata (overridden per page) -->
+	<meta property="og:site_name" content="brilliant" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="/brilliant.png" />
+	<meta property="og:image:width" content="760" />
+	<meta property="og:image:height" content="428" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="/brilliant.png" />
 </svelte:head>
 
 <header>

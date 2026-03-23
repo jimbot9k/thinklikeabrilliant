@@ -1,5 +1,13 @@
 <svelte:head>
 	<title>The Brilliant — A Field Guide</title>
+	<meta name="description" content="A comprehensive, peer-reviewed, and frankly exhausting deep-dive into what it means to think like a brilliant." />
+	<meta property="og:title" content="The Brilliant — A Field Guide" />
+	<meta property="og:description" content="A comprehensive, peer-reviewed, and frankly exhausting deep-dive into what it means to think like a brilliant." />
+	<meta property="og:url" content="https://thinklikeabrilliant.com/brilliant" />
+	<meta property="og:image" content="/brilliant.png" />
+	<meta name="twitter:title" content="The Brilliant — A Field Guide" />
+	<meta name="twitter:description" content="A comprehensive, peer-reviewed, and frankly exhausting deep-dive into what it means to think like a brilliant." />
+	<meta name="twitter:image" content="/brilliant.png" />
 </svelte:head>
 
 <main>
