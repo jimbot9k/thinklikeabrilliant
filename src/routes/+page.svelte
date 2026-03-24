@@ -1,99 +1,10 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import ScoreChart from '$lib/ScoreChart.svelte';
+	import { locale } from '$lib/locale.svelte';
+	import { translations } from '$lib/translations';
 
-	const questions = [
-		{
-			text: "You wake up and a pelican is sitting on your chest. It is holding your phone. It does not look friendly. You:",
-			answers: [
-				{ text: "Immediately try to rizz it up. You speak bird.", score: -2 },
-				{ text: "Scream 'no cap bro what is this' until the situation resolves itself.", score: -1 },
-				{ text: "Stay calm, assess the vibe, and carefully negotiate your phone back.", score: 1 },
-				{ text: "Observe its body language, identify what it wants, and execute a strategic retrieval plan.", score: 2 }
-			]
-		},
-		{
-			text: "A wizard slides into your DMs and offers you infinite knowledge about ONE topic. You have four seconds. You:",
-			answers: [
-				{ text: "Reply 'W' and type the first word in your head. It is 'cereal'.", score: -2 },
-				{ text: "Say 'vibes' and spend the rest of your life knowing everything about vibes.", score: -1 },
-				{ text: "Ask if 'everything' counts. Stall. Negotiate. Use the four seconds wisely.", score: 1 },
-				{ text: "Instantly identify the highest-leverage domain of knowledge and lock it in. No hesitation.", score: 2 }
-			]
-		},
-		{
-			text: "You open TikTok and every single video is just someone confidently explaining something completely wrong. You:",
-			answers: [
-				{ text: "Agree with all of them. The confidence is contagious and honestly kind of inspiring.", score: -2 },
-				{ text: "Feel weird about it but keep scrolling. Maybe they know something you don't.", score: -1 },
-				{ text: "Fact-check the ones that seem most sus before resharing anything.", score: 1 },
-				{ text: "Track down primary sources, check credentials, and leave politely cited corrections.", score: 2 }
-			]
-		},
-		{
-			text: "Your shadow has been making different life choices than you for three years. Its credit score is higher and it has a gym membership. You:",
-			answers: [
-				{ text: "Call it out publicly. This shadow is NOT that girl.", score: -2 },
-				{ text: "Feel personally attacked, post a vague tweet about betrayal, move on.", score: -1 },
-				{ text: "Respectfully ask what it's been doing differently and take notes.", score: 1 },
-				{ text: "Request a full breakdown of its decisions, identify divergence points, and adapt immediately.", score: 2 }
-			]
-		},
-		{
-			text: "A horse sends you a formal email with read-receipts on. Subject line: 'Regarding Your Recent Choices'. You:",
-			answers: [
-				{ text: "Leave it on read. You are NOT doing this today.", score: -2 },
-				{ text: "Open it, get to paragraph two, close it, tell yourself you'll deal with it later.", score: -1 },
-				{ text: "Read the whole thing even though it's uncomfortable. Accountability era.", score: 1 },
-				{ text: "Read it thoroughly, draft a structured response, and schedule a follow-up meeting.", score: 2 }
-			]
-		},
-		{
-			text: "Your friend group chat is going absolutely feral over a statistic someone screenshot from a random account with 47 followers. You:",
-			answers: [
-				{ text: "Add three fire emojis and help it spread. You are a culture-shaper.", score: -2 },
-				{ text: "Laugh-react and move on. Probably true enough.", score: -1 },
-				{ text: "Google it before adding to the chaos.", score: 1 },
-				{ text: "Find the original study, check the sample size and methodology, and post the actual context.", score: 2 }
-			]
-		},
-		{
-			text: "You're in a debate and thirty seconds in you realise the other person is completely right and you are very wrong. You:",
-			answers: [
-				{ text: "Double down harder. Backing out now would be major L behaviour.", score: -2 },
-				{ text: "Go quiet, change the subject, and hope nobody clocked what happened.", score: -1 },
-				{ text: "Concede the point with your dignity mostly intact.", score: 1 },
-				{ text: "Concede immediately, compliment their argument, and ask them to explain more. Secure in yourself.", score: 2 }
-			]
-		},
-		{
-			text: "Scientists announce that every decision you made on a Tuesday was wrong. All of them. Every single one. You:",
-			answers: [
-				{ text: "Immediately cancel Tuesdays within your household. It's giving restructure.", score: -2 },
-				{ text: "Gaslight yourself into thinking most Tuesdays were actually fine. Move on.", score: -1 },
-				{ text: "Sit down and genuinely review your Tuesday decisions to find the pattern.", score: 1 },
-				{ text: "Systemically analyse the Tuesday error pattern, build a decision checklist, and deploy it.", score: 2 }
-			]
-		},
-		{
-			text: "You're 40 minutes into a very confident presentation about cheese when you realize literally nothing you've said is accurate. You:",
-			answers: [
-				{ text: "Increase the confidence. You cannot let them see weakness. Gaslight the room.", score: -2 },
-				{ text: "Say 'anyway' and pivot to Q&A. Let the audience figure it out.", score: -1 },
-				{ text: "Stop, acknowledge the L, and give a quick corrected summary.", score: 1 },
-				{ text: "Stop mid-sentence, explain exactly what went wrong, provide the correct information, and apologise to the cheese.", score: 2 }
-			]
-		},
-		{
-			text: "You show up to what you thought was a dinner party and it's actually a job interview for a job you don't want, run by a panel of owls. You:",
-			answers: [
-				{ text: "Go absolutely unhinged in the interview. You are built different.", score: -2 },
-				{ text: "Half-try in a way that communicates 'I'm here but I'm not here here'.", score: -1 },
-				{ text: "Politely clarify the situation and ask whether attendance is actually mandatory.", score: 1 },
-				{ text: "Assess what the owls need, evaluate whether your skills transfer, and make a conscious decision about engaging.", score: 2 }
-			]
-		}
-	];
+	const t = $derived(translations[locale.current].quiz);
 
 	let currentQuestion = $state(0);
 	let totalScore = $state(0);
@@ -128,25 +39,12 @@
 		}
 	}
 
-	const progress = $derived((currentQuestion / questions.length) * 100);
+	const progress = $derived((currentQuestion / t.questions.length) * 100);
 	const result = $derived(totalScore > 0 ? 'brilliant' : 'fool');
 
 	const percentileMessage = $derived.by(() => {
 		if (percentile === null) return '';
-		const p = percentile;
-		if (result === 'brilliant') {
-			if (p >= 95) return `top ${100 - p + 1}% of everyone who has faced the pelican. the owls have you on a shortlist.`;
-			if (p >= 80) return `higher than ${p}% of everyone who took this. the wizard would give you a good topic.`;
-			if (p >= 60) return `you outscored ${p}% of everyone here. comfortably, quietly brilliant.`;
-			if (p >= 50) return `just above the halfway mark — a modest brilliant, which is honestly the most credible kind.`;
-			return `technically brilliant. practically mid. the horse has seen this before and has thoughts.`;
-		} else {
-			if (p <= 5) return `bottom ${p + 1}%. you are statistically the pelican. the pelican has no notes.`;
-			if (p <= 20) return `only ${p}% of people scored lower. a committed fool. deeply, authentically on brand.`;
-			if (p <= 40) return `${p}% of people scored lower. a devoted fool. the group chat fire emoji was definitely yours.`;
-			if (p <= 55) return `hovering around the midpoint — you're the kind of fool that almost wasn't. the horse is confused but supportive.`;
-			return `higher than ${p}% of everyone who sat with the pelican, which is a lot for a fool. the pelican is genuinely rattled.`;
-		}
+		return t.percentileMessage(percentile, result);
 	});
 
 	function selectAnswer(score: number, index: number) {
@@ -156,7 +54,7 @@
 
 		setTimeout(() => {
 			totalScore += score;
-			if (currentQuestion < questions.length - 1) {
+			if (currentQuestion < t.questions.length - 1) {
 				currentQuestion++;
 				selectedIndex = null;
 				animating = false;
@@ -189,38 +87,38 @@
 </script>
 
 <svelte:head>
-	<title>are you a brilliant?</title>
-	<meta name="description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
-	<meta property="og:title" content="are you a brilliant?" />
-	<meta property="og:description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
+	<title>{t.meta.title}</title>
+	<meta name="description" content={t.meta.description} />
+	<meta property="og:title" content={t.meta.title} />
+	<meta property="og:description" content={t.meta.description} />
 	<meta property="og:url" content="https://thinklikeabrilliant.com/" />
-	<meta name="twitter:title" content="are you a brilliant?" />
-	<meta name="twitter:description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
+	<meta name="twitter:title" content={t.meta.title} />
+	<meta name="twitter:description" content={t.meta.description} />
 </svelte:head>
 
 <main id="main-content" tabindex="-1">
 	<div class="card">
 		{#if !showResult}
 			<div class="quiz-progress">
-				<p class="label" aria-hidden="true">Question {currentQuestion + 1} of {questions.length}</p>
+				<p class="label" aria-hidden="true">{t.questionLabel(currentQuestion + 1, t.questions.length)}</p>
 				<div
 					class="progress-bar"
 					role="progressbar"
 					aria-valuenow={Math.round(progress)}
 					aria-valuemin={0}
 					aria-valuemax={100}
-					aria-label="Quiz progress, question {currentQuestion + 1} of {questions.length}"
+					aria-label={t.progressAriaLabel(currentQuestion + 1, t.questions.length)}
 				>
 					<div class="progress-fill" style="width: {progress}%"></div>
 				</div>
 			</div>
 
 			<div class="question-block" aria-live="polite" aria-atomic="true">
-				<h2 id="current-question">{questions[currentQuestion].text}</h2>
+				<h2 id="current-question">{t.questions[currentQuestion].text}</h2>
 			</div>
 
 			<div class="answers" role="group" aria-labelledby="current-question">
-				{#each questions[currentQuestion].answers as answer, i}
+				{#each t.questions[currentQuestion].answers as answer, i}
 					<button
 						class="answer-btn"
 						class:selected={selectedIndex === i}
@@ -234,37 +132,30 @@
 				{/each}
 			</div>
 		{:else}
-			<div class="result" class:brilliant={result === 'brilliant'} class:fool={result === 'fool'} role="region" aria-label="Your result">
+			<div class="result" class:brilliant={result === 'brilliant'} class:fool={result === 'fool'} role="region" aria-label={t.resultAriaLabel}>
 				{#if result === 'brilliant'}
-				<img class="result-img" src="/brilliant.png" alt="Illustration for Think Like a Brilliant result" />
-					<h2 tabindex="-1">You Think Like a Brilliant.</h2>
-					<p>
-						You approach problems with curiosity, rigor, and patience. You update your beliefs when
-						the evidence demands it, and you'd rather be right than feel right. The hard questions
-						don't scare you — they fascinate you.
-					</p>
-					<p class="score-tag">Score: +{totalScore}</p>
-				<a href="/brilliant" class="explore-link brilliant-link">explore what this means →</a>
+				<img class="result-img" src="/brilliant.png" alt={t.brilliant.imgAlt} />
+					<h2 tabindex="-1">{t.brilliant.h2}</h2>
+					<p>{t.brilliant.p}</p>
+					<p class="score-tag">{t.brilliant.scoreLabel(totalScore)}</p>
+				<a href="/brilliant" class={t.brilliant.exploreLinkClass}>{t.brilliant.exploreLink}</a>
 				{:else}
-				<img class="result-img" src="/fool.png" alt="Illustration for Act Like a Fool result" />
-					<h2 tabindex="-1">You Act Like a Fool.</h2>
-					<p>
-						You lead with instinct, confidence, and beautiful recklessness. You don't sweat the
-						details — you make the details sweat. The world calls it chaos. You call it Tuesday.
-					</p>
-					<p class="score-tag">Score: {totalScore}</p>
-				<a href="/fool" class="explore-link fool-link">explore what this means →</a>
+				<img class="result-img" src="/fool.png" alt={t.fool.imgAlt} />
+					<h2 tabindex="-1">{t.fool.h2}</h2>
+					<p>{t.fool.p}</p>
+					<p class="score-tag">{t.fool.scoreLabel(totalScore)}</p>
+				<a href="/fool" class={t.fool.exploreLinkClass}>{t.fool.exploreLink}</a>
 				{/if}
 			{#if statsLoading}
-				<p class="stats-status" role="status" aria-live="polite">tallying your results…</p>
+				<p class="stats-status" role="status" aria-live="polite">{t.tallying}</p>
 			{:else if percentile !== null}
-				<div class="stats" role="region" aria-label="Score statistics">
+				<div class="stats" role="region" aria-label={t.statsAriaLabel}>
 					<p class="percentile-text">{percentileMessage}</p>
 					<ScoreChart {distribution} userScore={totalScore} total={statTotal} />
-					<p class="stat-count">{statTotal.toLocaleString()} people have sat in the pelican chair</p>
+					<p class="stat-count">{t.pelicansCount(statTotal)}</p>
 				</div>
 			{/if}
-				<button class="restart-btn" onclick={restart}>Take the quiz again</button>
+				<button class="restart-btn" onclick={restart}>{t.restart}</button>
 			</div>
 		{/if}
 	</div>

@@ -1,14 +1,21 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
+	import { locale } from '$lib/locale.svelte';
+	import { translations } from '$lib/translations';
 
 	let { children } = $props();
 
 	let theme = $state<'dark' | 'light'>('dark');
 
+	const tl = $derived(translations[locale.current].layout);
+
 	onMount(() => {
-		const saved = localStorage.getItem('theme') as 'dark' | 'light' | null;
-		theme = saved ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
+		theme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+		const savedLocale = localStorage.getItem('locale') as 'en' | 'zh' | 'de' | null;
+		locale.init(savedLocale ?? (navigator.language.startsWith('de') ? 'de' : navigator.language.startsWith('zh') ? 'zh' : 'en'));
 	});
 
 	$effect(() => {
@@ -16,9 +23,15 @@
 		localStorage.setItem('theme', theme);
 	});
 
-	function toggle() {
+	$effect(() => {
+		document.documentElement.lang = locale.current === 'zh' ? 'zh-CN' : locale.current === 'de' ? 'de' : 'en';
+		localStorage.setItem('locale', locale.current);
+	});
+
+	function toggleTheme() {
 		theme = theme === 'dark' ? 'light' : 'dark';
 	}
+
 </script>
 
 <svelte:head>
@@ -37,17 +50,27 @@
 	<meta name="twitter:image" content="/brilliant.png" />
 </svelte:head>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">{tl.skipLink}</a>
 
-<header aria-label="Site header">
-	<a href="/" class="logo" aria-label="Are you a brilliant? — home">are you a brilliant?</a>
+<header aria-label={tl.headerAriaLabel}>
+	<a href="/" class="logo" aria-label={tl.logoAriaLabel}>{tl.logo}</a>
 	<div class="header-right">
 		<button
 			class="theme-toggle"
-			onclick={toggle}
-			aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+			onclick={toggleTheme}
+			aria-label={theme === 'dark' ? tl.switchToLight : tl.switchToDark}
 		>{theme === 'dark' ? '☀' : '☾'}</button>
-		<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label="jimbot9k on GitHub, opens in new tab">© jimbot9k</a>
+		<select
+			class="lang-select"
+			aria-label={tl.langLabel}
+			value={locale.current}
+			onchange={(e) => locale.set((e.currentTarget as HTMLSelectElement).value as 'en' | 'zh')}
+		>
+			<option value="en">English</option>
+			<option value="zh">中文</option>
+			<option value="de">Deutsch</option>
+		</select>
+		<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label={tl.githubAriaLabel}>© jimbot9k</a>
 	</div>
 </header>
 
@@ -99,6 +122,35 @@
 	.theme-toggle:hover {
 		color: var(--text);
 		background: var(--surface-hover);
+	}
+
+	.lang-select {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--text-muted);
+		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+		line-height: 1;
+		transition: color 0.15s, background 0.15s;
+		font-family: inherit;
+	}
+
+	.lang-select:hover {
+		color: var(--text);
+		background: var(--surface-hover);
+	}
+
+	.lang-select:focus-visible {
+		outline: 2px solid var(--accent-brilliant);
+		outline-offset: 2px;
+	}
+
+	.lang-select option {
+		background: var(--bg);
+		color: var(--text);
 	}
 
 	.copyright {
