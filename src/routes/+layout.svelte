@@ -20,9 +20,11 @@
 	<meta name="twitter:image" content="/brilliant.png" />
 </svelte:head>
 
-<header>
-	<a href="/" class="logo">are you a brilliant?</a>
-	<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer">© jimbot9k</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header aria-label="Site header">
+	<a href="/" class="logo" aria-label="Are you a brilliant? — home">are you a brilliant?</a>
+	<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label="jimbot9k on GitHub, opens in new tab">© jimbot9k</a>
 </header>
 
 {@render children()}
@@ -61,5 +63,30 @@
 
 	.copyright:hover {
 		color: #888;
+	}
+
+	:global(.skip-link) {
+		position: absolute;
+		top: -100%;
+		left: 1rem;
+		z-index: 200;
+		background: #a78bfa;
+		color: #0d0d0d;
+		padding: 0.5rem 1.25rem;
+		border-radius: 0 0 8px 8px;
+		font-weight: 700;
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: top 0.15s ease;
+	}
+
+	:global(.skip-link:focus) {
+		top: 0;
+	}
+
+	:global(*:focus-visible) {
+		outline: 2px solid #a78bfa;
+		outline-offset: 3px;
+		border-radius: 3px;
 	}
 </style>

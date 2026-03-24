@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import ScoreChart from '$lib/ScoreChart.svelte';
 
 	const questions = [
@@ -159,10 +160,16 @@
 				currentQuestion++;
 				selectedIndex = null;
 				animating = false;
+				tick().then(() => {
+					document.querySelector<HTMLButtonElement>('.answer-btn')?.focus();
+				});
 			} else {
 				showResult = true;
 				animating = false;
 				submitScore(totalScore);
+				tick().then(() => {
+					document.querySelector<HTMLElement>('.result h2')?.focus();
+				});
 			}
 		}, 400);
 	}
@@ -191,38 +198,46 @@
 	<meta name="twitter:description" content="A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool." />
 </svelte:head>
 
-<main>
+<main id="main-content" tabindex="-1">
 	<div class="card">
 		{#if !showResult}
-			<header>
-				<p class="label">Question {currentQuestion + 1} of {questions.length}</p>
-				<div class="progress-bar">
+			<div class="quiz-progress">
+				<p class="label" aria-hidden="true">Question {currentQuestion + 1} of {questions.length}</p>
+				<div
+					class="progress-bar"
+					role="progressbar"
+					aria-valuenow={Math.round(progress)}
+					aria-valuemin={0}
+					aria-valuemax={100}
+					aria-label="Quiz progress, question {currentQuestion + 1} of {questions.length}"
+				>
 					<div class="progress-fill" style="width: {progress}%"></div>
 				</div>
-			</header>
-
-			<div class="question-block">
-				<h2>{questions[currentQuestion].text}</h2>
 			</div>
 
-			<div class="answers">
+			<div class="question-block" aria-live="polite" aria-atomic="true">
+				<h2 id="current-question">{questions[currentQuestion].text}</h2>
+			</div>
+
+			<div class="answers" role="group" aria-labelledby="current-question">
 				{#each questions[currentQuestion].answers as answer, i}
 					<button
 						class="answer-btn"
 						class:selected={selectedIndex === i}
 						onclick={() => selectAnswer(answer.score, i)}
 						disabled={animating}
+						aria-pressed={selectedIndex === i}
 					>
-						<span class="answer-letter">{String.fromCharCode(65 + i)}</span>
+						<span class="answer-letter" aria-hidden="true">{String.fromCharCode(65 + i)}</span>
 						<span class="answer-text">{answer.text}</span>
 					</button>
 				{/each}
 			</div>
 		{:else}
-			<div class="result" class:brilliant={result === 'brilliant'} class:fool={result === 'fool'}>
+			<div class="result" class:brilliant={result === 'brilliant'} class:fool={result === 'fool'} role="region" aria-label="Your result">
 				{#if result === 'brilliant'}
-				<img class="result-img" src="/brilliant.png" alt="Think Like a Brilliant" />
-					<h2>You Think Like a Brilliant.</h2>
+				<img class="result-img" src="/brilliant.png" alt="Illustration for Think Like a Brilliant result" />
+					<h2 tabindex="-1">You Think Like a Brilliant.</h2>
 					<p>
 						You approach problems with curiosity, rigor, and patience. You update your beliefs when
 						the evidence demands it, and you'd rather be right than feel right. The hard questions
@@ -231,8 +246,8 @@
 					<p class="score-tag">Score: +{totalScore}</p>
 				<a href="/brilliant" class="explore-link brilliant-link">explore what this means →</a>
 				{:else}
-				<img class="result-img" src="/fool.png" alt="Act Like a Fool" />
-					<h2>You Act Like a Fool.</h2>
+				<img class="result-img" src="/fool.png" alt="Illustration for Act Like a Fool result" />
+					<h2 tabindex="-1">You Act Like a Fool.</h2>
 					<p>
 						You lead with instinct, confidence, and beautiful recklessness. You don't sweat the
 						details — you make the details sweat. The world calls it chaos. You call it Tuesday.
@@ -241,15 +256,15 @@
 				<a href="/fool" class="explore-link fool-link">explore what this means →</a>
 				{/if}
 			{#if statsLoading}
-				<p class="stats-status">tallying your results…</p>
+				<p class="stats-status" role="status" aria-live="polite">tallying your results…</p>
 			{:else if percentile !== null}
-				<div class="stats">
+				<div class="stats" role="region" aria-label="Score statistics">
 					<p class="percentile-text">{percentileMessage}</p>
 					<ScoreChart {distribution} userScore={totalScore} total={statTotal} />
 					<p class="stat-count">{statTotal.toLocaleString()} people have sat in the pelican chair</p>
 				</div>
 			{/if}
-				<button class="restart-btn" onclick={restart}>Take it again</button>
+				<button class="restart-btn" onclick={restart}>Take the quiz again</button>
 			</div>
 		{/if}
 	</div>
@@ -283,7 +298,7 @@
 		box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 	}
 
-	header {
+	.quiz-progress {
 		margin-bottom: 2rem;
 	}
 
@@ -485,6 +500,28 @@
 		margin: 0.5rem 0 0 !important;
 		font-size: 0.75rem !important;
 		color: #444 !important;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.progress-fill {
+			transition: none;
+		}
+
+		.answer-btn {
+			transition: none;
+		}
+
+		.answer-btn:hover:not(:disabled) {
+			transform: none;
+		}
+
+		.restart-btn {
+			transition: none;
+		}
+
+		.restart-btn:hover {
+			transform: none;
+		}
 	}
 </style>
 

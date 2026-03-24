@@ -10,8 +10,8 @@
 	<meta name="twitter:image" content="/brilliant.png" />
 </svelte:head>
 
-<main>
-	<a href="/" class="back">← back to the quiz</a>
+<main id="main-content" tabindex="-1">
+	<a href="/" class="back" aria-label="Back to the quiz home page"><span aria-hidden="true">← </span>back to the quiz</a>
 
 	<img src="/brilliant.png" alt="Think Like a Brilliant" class="hero-img" />
 
@@ -51,7 +51,7 @@
 		<p>You will be right about things before other people. This is both a superpower and a source of unending low-level frustration that you have learned to manage through journaling, walks, and occasionally being right out loud when the stakes are high enough to justify it.</p>
 		<p>The owls respect you. The horse's email is waiting. The wizard's offer stands.</p>
 		<p>Go be brilliant. You already are.</p>
-		<a href="/" class="take-again">Take it again</a>
+		<a href="/" class="take-again" aria-label="Take the quiz again">Take it again</a>
 	</article>
 </main>
 
@@ -143,5 +143,16 @@
 	.take-again:hover {
 		background: #5a52e0;
 		transform: translateY(-1px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.back,
+		.take-again {
+			transition: none;
+		}
+
+		.take-again:hover {
+			transform: none;
+		}
 	}
 </style>

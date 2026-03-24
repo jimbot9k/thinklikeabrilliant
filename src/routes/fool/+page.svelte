@@ -10,8 +10,8 @@
 	<meta name="twitter:image" content="/fool.png" />
 </svelte:head>
 
-<main>
-	<a href="/" class="back">← back to the quiz</a>
+<main id="main-content" tabindex="-1">
+	<a href="/" class="back" aria-label="Back to the quiz home page"><span aria-hidden="true">← </span>back to the quiz</a>
 
 	<img src="/fool.png" alt="Act Like a Fool" class="hero-img" />
 
@@ -58,7 +58,7 @@
 		<p>But the world also needs you. The world needs the person who gets on the log before they've figured out it floats. The world needs the person who speaks bird to a pelican and somehow makes it work. The world needs the person who says "anyway" and pivots to Q&A during the cheese presentation of their life, dusts off, and tries again.</p>
 		<p>The Fool does not have a plan. The Fool has something better: a complete and total willingness to be in the situation and figure it out. That's not nothing. That's actually extraordinary.</p>
 		<p>Tuesday is tomorrow. You'll make a different decision this time. Or you won't, and you'll have another great story. Either way, it's going to be something.</p>
-		<a href="/" class="take-again">Take it again</a>
+		<a href="/" class="take-again" aria-label="Take the quiz again">Take it again</a>
 	</article>
 </main>
 
@@ -150,5 +150,16 @@
 	.take-again:hover {
 		background: #ea6c0a;
 		transform: translateY(-1px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.back,
+		.take-again {
+			transition: none;
+		}
+
+		.take-again:hover {
+			transform: none;
+		}
 	}
 </style>

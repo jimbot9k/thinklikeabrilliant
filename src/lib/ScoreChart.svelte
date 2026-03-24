@@ -64,7 +64,9 @@
 	}
 </script>
 
-<svg viewBox="0 0 {W} {H}" class="chart" aria-label="Score distribution chart">
+<svg viewBox="0 0 {W} {H}" class="chart" role="img" aria-labelledby="chart-title chart-desc">
+	<title id="chart-title">Score distribution</title>
+	<desc id="chart-desc">Bar chart showing quiz scores from −20 (most fool-like) to +20 (most brilliant-like). Your score of {userScore > 0 ? '+' : ''}{userScore} is highlighted in yellow. {total.toLocaleString()} total results recorded.</desc>
 	<!-- bars -->
 	{#each allScores as score}
 		{@const h = bh(score)}
