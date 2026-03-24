@@ -1,7 +1,24 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
+
+	let theme = $state<'dark' | 'light'>('dark');
+
+	onMount(() => {
+		const saved = localStorage.getItem('theme') as 'dark' | 'light' | null;
+		theme = saved ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+	});
+
+	$effect(() => {
+		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+	});
+
+	function toggle() {
+		theme = theme === 'dark' ? 'light' : 'dark';
+	}
 </script>
 
 <svelte:head>
@@ -24,7 +41,14 @@
 
 <header aria-label="Site header">
 	<a href="/" class="logo" aria-label="Are you a brilliant? — home">are you a brilliant?</a>
-	<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label="jimbot9k on GitHub, opens in new tab">© jimbot9k</a>
+	<div class="header-right">
+		<button
+			class="theme-toggle"
+			onclick={toggle}
+			aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+		>{theme === 'dark' ? '☀' : '☾'}</button>
+		<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label="jimbot9k on GitHub, opens in new tab">© jimbot9k</a>
+	</div>
 </header>
 
 {@render children()}
@@ -37,9 +61,9 @@
 		right: 0;
 		z-index: 100;
 		padding: 1rem 2rem;
-		background: rgba(13, 13, 13, 0.85);
+		background: var(--bg-header);
 		backdrop-filter: blur(8px);
-		border-bottom: 1px solid #1e1e1e;
+		border-bottom: 1px solid var(--border-4);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -50,19 +74,42 @@
 		font-weight: 700;
 		letter-spacing: 0.08em;
 		text-transform: lowercase;
-		color: #a78bfa;
+		color: var(--accent-brilliant);
 		text-decoration: none;
+	}
+
+	.header-right {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.theme-toggle {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+		line-height: 1;
+		transition: color 0.15s, background 0.15s;
+	}
+
+	.theme-toggle:hover {
+		color: var(--text);
+		background: var(--surface-hover);
 	}
 
 	.copyright {
 		font-size: 0.8rem;
-		color: #555;
+		color: var(--text-faint);
 		text-decoration: none;
 		transition: color 0.15s;
 	}
 
 	.copyright:hover {
-		color: #888;
+		color: var(--text-muted);
 	}
 
 	:global(.skip-link) {
@@ -70,8 +117,8 @@
 		top: -100%;
 		left: 1rem;
 		z-index: 200;
-		background: #a78bfa;
-		color: #0d0d0d;
+		background: var(--accent-brilliant);
+		color: var(--bg);
 		padding: 0.5rem 1.25rem;
 		border-radius: 0 0 8px 8px;
 		font-weight: 700;
@@ -85,7 +132,7 @@
 	}
 
 	:global(*:focus-visible) {
-		outline: 2px solid #a78bfa;
+		outline: 2px solid var(--accent-brilliant);
 		outline-offset: 3px;
 		border-radius: 3px;
 	}

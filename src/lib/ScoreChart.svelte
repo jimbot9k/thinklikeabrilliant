@@ -96,7 +96,7 @@
 	{/if}
 
 	<!-- x-axis baseline -->
-	<line x1="0" y1={PAD_TOP + CHART_H} x2={W} y2={PAD_TOP + CHART_H} stroke="#2e2e2e" stroke-width="1" />
+	<line x1="0" y1={PAD_TOP + CHART_H} x2={W} y2={PAD_TOP + CHART_H} style="stroke: var(--chart-axis)" stroke-width="1" />
 
 	<!-- zero divider -->
 	<line
@@ -104,7 +104,7 @@
 		y1={PAD_TOP}
 		x2={bx(0)}
 		y2={PAD_TOP + CHART_H}
-		stroke="#3a3a3a"
+		style="stroke: var(--chart-grid)"
 		stroke-width="1"
 		stroke-dasharray="3,3"
 	/>
@@ -115,7 +115,7 @@
 			x={bx(l) + BAR_W / 2}
 			y={H - 8}
 			text-anchor="middle"
-			fill="#555"
+			style="fill: var(--chart-label)"
 			font-size="10"
 			font-family="system-ui, sans-serif"
 		>{l > 0 ? '+' : ''}{l}</text>

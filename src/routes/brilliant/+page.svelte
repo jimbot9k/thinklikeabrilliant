@@ -59,8 +59,8 @@
 	:global(body) {
 		margin: 0;
 		font-family: 'Segoe UI', system-ui, sans-serif;
-		background: #0d0d0d;
-		color: #f0f0f0;
+		background: var(--bg);
+		color: var(--text);
 		min-height: 100vh;
 	}
 
@@ -72,7 +72,7 @@
 
 	.back {
 		display: inline-block;
-		color: #a78bfa;
+		color: var(--accent-brilliant);
 		text-decoration: none;
 		font-size: 0.9rem;
 		margin-bottom: 2rem;
@@ -94,13 +94,13 @@
 	h1 {
 		font-size: 2.2rem;
 		font-weight: 700;
-		color: #a78bfa;
+		color: var(--accent-brilliant);
 		margin: 0 0 0.5rem;
 		line-height: 1.2;
 	}
 
 	.subtitle {
-		color: #888;
+		color: var(--text-muted);
 		font-size: 0.95rem;
 		margin: 0 0 3rem;
 		font-style: italic;
@@ -110,27 +110,27 @@
 	h2 {
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: #e0d4ff;
+		color: var(--brilliant-blockquote);
 		margin: 2.5rem 0 0.75rem;
-		border-left: 3px solid #a78bfa;
+		border-left: 3px solid var(--accent-brilliant);
 		padding-left: 0.75rem;
 	}
 
 	p {
-		color: #ccc;
+		color: var(--text-secondary);
 		line-height: 1.8;
 		font-size: 1rem;
 		margin: 0 0 1.25rem;
 	}
 
 	strong {
-		color: #e8e8e8;
+		color: var(--text);
 	}
 
 	.take-again {
 		display: inline-block;
 		margin-top: 2rem;
-		background: #6c63ff;
+		background: var(--accent);
 		color: #fff;
 		text-decoration: none;
 		border-radius: 10px;
@@ -141,7 +141,7 @@
 	}
 
 	.take-again:hover {
-		background: #5a52e0;
+		background: var(--accent-hover);
 		transform: translateY(-1px);
 	}
 

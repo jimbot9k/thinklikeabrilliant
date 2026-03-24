@@ -4,6 +4,111 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+		<!-- prevent flash of wrong theme -->
+		<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(_){}</script>
+		<style>
+			:root {
+				--bg: #0d0d0d;
+				--bg-header: rgba(13, 13, 13, 0.85);
+				--surface: #1a1a1a;
+				--surface-2: #242424;
+				--surface-3: #111;
+				--surface-hover: #2d2d2d;
+				--border: #2e2e2e;
+				--border-2: #333;
+				--border-3: #222;
+				--border-4: #1e1e1e;
+				--text: #f0f0f0;
+				--text-2: #e0e0e0;
+				--text-secondary: #ccc;
+				--text-muted: #888;
+				--text-faint: #555;
+				--text-dim: #444;
+				--text-ghost: #666;
+				--accent: #6c63ff;
+				--accent-hover: #5a52e0;
+				--accent-brilliant: #a78bfa;
+				--accent-fool: #f97316;
+				--accent-fool-hover: #ea6c0a;
+				--selected-bg: #2a2050;
+				--answer-letter-bg: #333;
+				--answer-letter-color: #aaa;
+				--chart-axis: #2e2e2e;
+				--chart-grid: #3a3a3a;
+				--chart-label: #555;
+				--brilliant-blockquote: #e0d4ff;
+				--fool-blockquote: #fed7aa;
+				--shadow: rgba(0, 0, 0, 0.5);
+			}
+			@media (prefers-color-scheme: light) {
+				:root:not([data-theme="dark"]) {
+					--bg: #f5f4ff;
+					--bg-header: rgba(245, 244, 255, 0.9);
+					--surface: #ffffff;
+					--surface-2: #f0eeff;
+					--surface-3: #f8f7ff;
+					--surface-hover: #e8e5ff;
+					--border: #d4d0f0;
+					--border-2: #ddd;
+					--border-3: #e0e0e0;
+					--border-4: #e0deec;
+					--text: #1a1a2e;
+					--text-2: #2d2d3a;
+					--text-secondary: #4a4a5a;
+					--text-muted: #6b6b8a;
+					--text-faint: #8888a8;
+					--text-dim: #9999b3;
+					--text-ghost: #aaaabc;
+					--accent: #6c63ff;
+					--accent-hover: #5a52e0;
+					--accent-brilliant: #7c5cdb;
+					--accent-fool: #ea6010;
+					--accent-fool-hover: #d4510a;
+					--selected-bg: #ede9ff;
+					--answer-letter-bg: #e0deec;
+					--answer-letter-color: #6b6b8a;
+					--chart-axis: #d4d0f0;
+					--chart-grid: #e4e2f5;
+					--chart-label: #9999b3;
+					--brilliant-blockquote: #3d2080;
+					--fool-blockquote: #7a3200;
+					--shadow: rgba(0, 0, 0, 0.1);
+				}
+			}
+			[data-theme="light"] {
+				--bg: #f5f4ff;
+				--bg-header: rgba(245, 244, 255, 0.9);
+				--surface: #ffffff;
+				--surface-2: #f0eeff;
+				--surface-3: #f8f7ff;
+				--surface-hover: #e8e5ff;
+				--border: #d4d0f0;
+				--border-2: #ddd;
+				--border-3: #e0e0e0;
+				--border-4: #e0deec;
+				--text: #1a1a2e;
+				--text-2: #2d2d3a;
+				--text-secondary: #4a4a5a;
+				--text-muted: #6b6b8a;
+				--text-faint: #8888a8;
+				--text-dim: #9999b3;
+				--text-ghost: #aaaabc;
+				--accent: #6c63ff;
+				--accent-hover: #5a52e0;
+				--accent-brilliant: #7c5cdb;
+				--accent-fool: #ea6010;
+				--accent-fool-hover: #d4510a;
+				--selected-bg: #ede9ff;
+				--answer-letter-bg: #e0deec;
+				--answer-letter-color: #6b6b8a;
+				--chart-axis: #d4d0f0;
+				--chart-grid: #e4e2f5;
+				--chart-label: #9999b3;
+				--brilliant-blockquote: #3d2080;
+				--fool-blockquote: #7a3200;
+				--shadow: rgba(0, 0, 0, 0.1);
+			}
+		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
