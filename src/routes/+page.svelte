@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ScoreChart from '$lib/ScoreChart.svelte';
+
 	const questions = [
 		{
 			text: "You wake up and a pelican is sitting on your chest. It is holding your phone. It does not look friendly. You:",
@@ -98,8 +100,53 @@
 	let selectedIndex = $state<number | null>(null);
 	let animating = $state(false);
 
+	let percentile = $state<number | null>(null);
+	let distribution = $state<Record<number, number>>({});
+	let statTotal = $state(0);
+	let statsLoading = $state(false);
+	let statsError = $state(false);
+
+	async function submitScore(score: number) {
+		statsLoading = true;
+		statsError = false;
+		try {
+			const res = await fetch('/api/score', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ score })
+			});
+			if (!res.ok) throw new Error();
+			const data = await res.json();
+			percentile = data.percentile;
+			distribution = data.distribution;
+			statTotal = data.total;
+		} catch {
+			statsError = true;
+		} finally {
+			statsLoading = false;
+		}
+	}
+
 	const progress = $derived((currentQuestion / questions.length) * 100);
 	const result = $derived(totalScore > 0 ? 'brilliant' : 'fool');
+
+	const percentileMessage = $derived.by(() => {
+		if (percentile === null) return '';
+		const p = percentile;
+		if (result === 'brilliant') {
+			if (p >= 95) return `top ${100 - p + 1}% of everyone who has faced the pelican. the owls have you on a shortlist.`;
+			if (p >= 80) return `higher than ${p}% of all players. the wizard would give you a good topic.`;
+			if (p >= 60) return `you outscored ${p}% of everyone here. comfortably, quietly brilliant.`;
+			if (p >= 50) return `just above the halfway mark — a modest brilliant, which is honestly the most credible kind.`;
+			return `technically brilliant. practically mid. the horse has seen this before and has thoughts.`;
+		} else {
+			if (p <= 5) return `bottom ${p + 1}%. you are statistically the pelican. the pelican has no notes.`;
+			if (p <= 20) return `only ${p}% of players scored lower. a committed fool. deeply, authentically on brand.`;
+			if (p <= 40) return `${p}% of players scored lower. a devoted fool. the group chat fire emoji was definitely yours.`;
+			if (p <= 55) return `hovering around the midpoint — you're the kind of fool that almost wasn't. the horse is confused but supportive.`;
+			return `higher than ${p}% of players, which is a lot for a fool. the pelican is genuinely rattled.`;
+		}
+	});
 
 	function selectAnswer(score: number, index: number) {
 		if (animating) return;
@@ -115,6 +162,7 @@
 			} else {
 				showResult = true;
 				animating = false;
+				submitScore(totalScore);
 			}
 		}, 400);
 	}
@@ -125,6 +173,11 @@
 		showResult = false;
 		selectedIndex = null;
 		animating = false;
+		percentile = null;
+		distribution = {};
+		statTotal = 0;
+		statsLoading = false;
+		statsError = false;
 	}
 </script>
 
@@ -187,7 +240,15 @@
 					<p class="score-tag">Score: {totalScore}</p>
 				<a href="/fool" class="explore-link fool-link">explore what this means →</a>
 				{/if}
-
+			{#if statsLoading}
+				<p class="stats-status">tallying your results…</p>
+			{:else if percentile !== null}
+				<div class="stats">
+					<p class="percentile-text">{percentileMessage}</p>
+					<ScoreChart {distribution} userScore={totalScore} total={statTotal} />
+					<p class="stat-count">{statTotal.toLocaleString()} players have sat in the pelican chair</p>
+				</div>
+			{/if}
 				<button class="restart-btn" onclick={restart}>Take it again</button>
 			</div>
 		{/if}
@@ -398,6 +459,32 @@
 
 	.fool-link {
 		color: #f97316;
+	}
+
+	.stats-status {
+		color: #555;
+		font-size: 0.85rem;
+		margin: 1.25rem 0;
+	}
+
+	.stats {
+		margin: 1.25rem 0;
+		padding: 1rem 1.25rem;
+		background: #111;
+		border: 1px solid #222;
+		border-radius: 10px;
+	}
+
+	.percentile-text {
+		margin: 0 0 0.5rem !important;
+		font-size: 0.95rem !important;
+		color: #aaa !important;
+	}
+
+	.stat-count {
+		margin: 0.5rem 0 0 !important;
+		font-size: 0.75rem !important;
+		color: #444 !important;
 	}
 </style>
 
