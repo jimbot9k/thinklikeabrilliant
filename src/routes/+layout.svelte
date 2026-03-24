@@ -4,7 +4,7 @@
 	import { locale } from '$lib/locale.svelte';
 	import { translations } from '$lib/translations';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import { injectSpeedInsights } from '@vercel/speed-insights';
+	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { onMount } from 'svelte';
 
 	injectSpeedInsights();
