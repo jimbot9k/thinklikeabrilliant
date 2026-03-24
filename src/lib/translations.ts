@@ -16,6 +16,11 @@ interface Translation {
 	};
 	quiz: {
 		meta: { title: string; description: string };
+		intro: {
+			heading: string;
+			body: string[];
+			cta: string;
+		};
 		questionLabel: (current: number, total: number) => string;
 		progressAriaLabel: (current: number, total: number) => string;
 		questions: Array<{ text: string; answers: Array<{ text: string; score: number }> }>;
@@ -83,6 +88,16 @@ export const translations: Record<Locale, Translation> = {
 				title: 'think like a brilliant',
 				description:
 					'A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool.'
+			},
+			intro: {
+				heading: 'A brief, important clarification.',
+				body: [
+					'This is a 10-question cognitive assessment designed to determine whether you think like a Brilliant or act like a Fool. It was developed by researchers who take this very seriously and would prefer you did too.',
+					'The assessment works by presenting you with a series of scenarios — social, financial, metaphysical — and measuring the quality of your instincts. There are no trick questions. There are, however, questions about pelicans, wizards, and your shadow\'s credit score.',
+					'Brilliants respond to the world with clarity, intention, and mild suspicion of geese. Fools respond with energy, confidence, and a near-total absence of follow-through.',
+					'At the end, you will be classified. The classification is binding. Answer honestly — the assessment knows when you\'re performing.'
+				],
+				cta: 'Begin the assessment'
 			},
 			questionLabel: (c, t) => `Question ${c} of ${t}`,
 			progressAriaLabel: (c, t) => `Quiz progress, question ${c} of ${t}`,
@@ -509,6 +524,16 @@ export const translations: Record<Locale, Translation> = {
 				title: '像智者一样思考',
 				description: '一个关于鹈鹕、巫师的10题性格测验，看看你到底是像智者一样思考，还是像逗比一样行事。'
 			},
+			intro: {
+				heading: '一个简短但重要的说明。',
+				body: [
+					'这是一份包含10道题的认知测评，旨在判断你究竟是像智者一样思考，还是像逗比一样行事。它由一批极为认真的研究人员开发，他们希望你也能以同等的认真态度对待它。',
+					'测评通过呈现一系列场景来运作——社交的、财务的、形而上学的——并测量你直觉的质量。没有陷阱题。但有关于鹈鹕、巫师，以及你的影子信用评分的问题。',
+					'智者以清晰、意图和对鹅类的温和警惕来回应这个世界。逗比则以充沛的精力、十足的自信，和几乎为零的后续行动来回应。',
+					'最后，你将被分类。分类结果具有约束力。请如实作答——题目知道你什么时候在表演。'
+				],
+				cta: '开始测验'
+			},
 			questionLabel: (c, t) => `第 ${c} 题，共 ${t} 题`,
 			progressAriaLabel: (c, t) => `测验进度，第 ${c} 题，共 ${t} 题`,
 			questions: [
@@ -834,6 +859,16 @@ export const translations: Record<Locale, Translation> = {
 				title: 'denk wie ein Genie',
 				description:
 					'Ein 10-Fragen-Persönlichkeitstest über Pelikane, Zauberer und ob du wie ein Genie denkst oder wie ein Narr handelst.'
+			},
+			intro: {
+				heading: 'Eine kurze, wichtige Klarstellung.',
+				body: [
+					'Dies ist eine kognitive Auswertung mit 10 Fragen, die feststellen soll, ob du wie ein Genie denkst oder wie ein Narr handelst. Sie wurde von Forschern entwickelt, die das sehr ernst nehmen, und sie würden es vorziehen, wenn du das auch tätest.',
+					'Die Auswertung funktioniert, indem dir eine Reihe von Szenarien präsentiert wird — soziale, finanzielle, metaphysische — und die Qualität deiner Instinkte gemessen wird. Es gibt keine Fangfragen. Es gibt jedoch Fragen über Pelikane, Zauberer und die Bonität deines Schattens.',
+					'Genies begegnen der Welt mit Klarheit, Absicht und leichtem Misstrauen gegenüber Gänsen. Narren begegnen ihr mit Energie, Selbstvertrauen und einem nahezu vollständigen Fehlen von Konsequenz.',
+					'Am Ende wirst du eingestuft. Die Einstufung ist bindend. Antworte ehrlich — die Auswertung weiß, wann du schauspielst.'
+				],
+				cta: 'Auswertung beginnen'
 			},
 			questionLabel: (c, t) => `Frage ${c} von ${t}`,
 			progressAriaLabel: (c, t) => `Quiz-Fortschritt, Frage ${c} von ${t}`,

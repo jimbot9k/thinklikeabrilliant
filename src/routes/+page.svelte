@@ -6,6 +6,7 @@
 
 	const t = $derived(translations[locale.current].quiz);
 
+	let showIntro = $state(true);
 	let currentQuestion = $state(0);
 	let totalScore = $state(0);
 	let showResult = $state(false);
@@ -72,7 +73,15 @@
 		}, 400);
 	}
 
+	function startQuiz() {
+		showIntro = false;
+		tick().then(() => {
+			document.querySelector<HTMLButtonElement>('.answer-btn')?.focus();
+		});
+	}
+
 	function restart() {
+		showIntro = true;
 		currentQuestion = 0;
 		totalScore = 0;
 		showResult = false;
@@ -98,7 +107,15 @@
 
 <main id="main-content" tabindex="-1">
 	<div class="card">
-		{#if !showResult}
+		{#if showIntro}
+			<div class="intro">
+				<h2>{t.intro.heading}</h2>
+				{#each t.intro.body as para}
+					<p>{para}</p>
+				{/each}
+				<button class="start-btn" onclick={startQuiz}>{t.intro.cta}</button>
+			</div>
+		{:else if !showResult}
 			<div class="quiz-progress">
 				<p class="label" aria-hidden="true">{t.questionLabel(currentQuestion + 1, t.questions.length)}</p>
 				<div
@@ -213,6 +230,47 @@
 		background: linear-gradient(90deg, #6c63ff, #a78bfa);
 		border-radius: 999px;
 		transition: width 0.4s ease;
+	}
+
+	.question-block {
+		margin-bottom: 2rem;
+	}
+
+	.intro {
+		padding: 0.5rem 0;
+	}
+
+	.intro h2 {
+		font-size: 1.35rem;
+		font-weight: 700;
+		margin: 0 0 1.5rem;
+		color: var(--accent-brilliant);
+	}
+
+	.intro p {
+		font-size: 0.95rem;
+		line-height: 1.75;
+		color: var(--text-secondary);
+		margin: 0 0 1rem;
+	}
+
+	.start-btn {
+		margin-top: 0.75rem;
+		background: var(--accent);
+		color: #fff;
+		border: none;
+		border-radius: 10px;
+		padding: 0.8rem 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		width: 100%;
+		transition: background 0.15s, transform 0.1s;
+	}
+
+	.start-btn:hover {
+		background: var(--accent-hover);
+		transform: translateY(-1px);
 	}
 
 	.question-block {
