@@ -13,6 +13,10 @@ interface Translation {
 		langLabel: string;
 		headerAriaLabel: string;
 		logoAriaLabel: string;
+		donateLabel: string;
+		donateAriaLabel: string;
+		copiedLabel: string;
+		footerAriaLabel: string;
 	};
 	quiz: {
 		meta: { title: string; description: string };
@@ -81,7 +85,11 @@ export const translations: Record<Locale, Translation> = {
 			switchToDark: 'Switch to dark mode',
 			langLabel: 'Select language',
 			headerAriaLabel: 'Site header',
-			logoAriaLabel: 'Think Like a Brilliant — home'
+			logoAriaLabel: 'Think Like a Brilliant — home',
+			donateLabel: 'The pelican does not work for free.',
+			donateAriaLabel: 'Copy Bitcoin donation address',
+			copiedLabel: 'Copied.',
+			footerAriaLabel: 'Site footer'
 		},
 		quiz: {
 			meta: {
@@ -517,7 +525,11 @@ export const translations: Record<Locale, Translation> = {
 			switchToDark: '切换到深色模式',
 			langLabel: '选择语言',
 			headerAriaLabel: '网站导航栏',
-			logoAriaLabel: '像智者一样思考 —— 返回首页'
+			logoAriaLabel: '像智者一样思考 —— 返回首页',
+			donateLabel: '鹈鹕不是免费工作的。',
+			donateAriaLabel: '复制比特币捐赠地址',
+			copiedLabel: '已复制。',
+			footerAriaLabel: '网站底部'
 		},
 		quiz: {
 			meta: {
@@ -852,7 +864,11 @@ export const translations: Record<Locale, Translation> = {
 			switchToDark: 'Dunkles Design aktivieren',
 			langLabel: 'Sprache auswählen',
 			headerAriaLabel: 'Seitenheader',
-			logoAriaLabel: 'Denk wie ein Genie — Startseite'
+			logoAriaLabel: 'Denk wie ein Genie — Startseite',
+			donateLabel: 'Der Pelikan arbeitet nicht umsonst.',
+			donateAriaLabel: 'Bitcoin-Spendenadresse kopieren',
+			copiedLabel: 'Kopiert.',
+			footerAriaLabel: 'Seitenfußer'
 		},
 		quiz: {
 			meta: {

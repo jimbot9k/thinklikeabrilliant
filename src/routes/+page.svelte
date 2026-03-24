@@ -184,14 +184,12 @@
 		font-family: 'Segoe UI', system-ui, sans-serif;
 		background: var(--bg);
 		color: var(--text);
-		min-height: 100vh;
 	}
 
 	main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 100vh;
 		padding: 5rem 1rem 2rem;
 		box-sizing: border-box;
 	}

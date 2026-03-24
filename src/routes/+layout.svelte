@@ -7,6 +7,7 @@
 	let { children } = $props();
 
 	let theme = $state<'dark' | 'light'>('dark');
+	let copied = $state(false);
 
 	const tl = $derived(translations[locale.current].layout);
 
@@ -70,13 +71,40 @@
 			<option value="zh">中文</option>
 			<option value="de">Deutsch</option>
 		</select>
-		<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label={tl.githubAriaLabel}>© jimbot9k</a>
 	</div>
 </header>
 
 {@render children()}
 
+<footer aria-label={tl.footerAriaLabel}>
+	<p class="donate-label">{tl.donateLabel}</p>
+	<button
+		class="btc-btn"
+		aria-label={copied ? tl.copiedLabel : tl.donateAriaLabel}
+		onclick={() => {
+			navigator.clipboard.writeText('3LvVN9PFtnUiZhzTLUV2k2BTJjiysPjvZE');
+			copied = true;
+			setTimeout(() => (copied = false), 2000);
+		}}
+	>
+		<span class="btc-icon" aria-hidden="true">₿</span>
+		<span class="btc-address" aria-hidden="true">3LvVN9PFtnUiZhzTLUV2k2BTJjiysPjvZE</span>
+		<span class="copy-status" aria-hidden="true">{copied ? tl.copiedLabel : ''}</span>
+	</button>
+	<a href="https://github.com/jimbot9k" class="copyright" target="_blank" rel="noopener noreferrer" aria-label={tl.githubAriaLabel}>© jimbot9k</a>
+</footer>
+
 <style>
+	:global(body) {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	:global(main) {
+		flex: 1;
+	}
+
 	header {
 		position: fixed;
 		top: 0;
@@ -162,6 +190,64 @@
 
 	.copyright:hover {
 		color: var(--text-muted);
+	}
+
+	footer {
+		margin-top: 3rem;
+		padding: 2rem 1.5rem;
+		text-align: center;
+		border-top: 1px solid var(--border-4);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.donate-label {
+		font-size: 0.8rem;
+		color: var(--text-faint);
+		margin: 0;
+	}
+
+	.btc-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: var(--surface);
+		border: 1px solid var(--border-4);
+		border-radius: 8px;
+		padding: 0.45rem 0.9rem;
+		cursor: pointer;
+		font-family: monospace;
+		font-size: 0.72rem;
+		color: var(--text-muted);
+		transition: border-color 0.15s, color 0.15s;
+		max-width: 100%;
+	}
+
+	.btc-btn:hover {
+		border-color: var(--accent);
+		color: var(--text);
+	}
+
+	.btc-icon {
+		color: #f7931a;
+		font-style: normal;
+		flex-shrink: 0;
+	}
+
+	.btc-address {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.copy-status {
+		flex-shrink: 0;
+		font-family: inherit;
+		font-size: 0.7rem;
+		color: var(--accent-brilliant);
+		min-width: 3ch;
 	}
 
 	:global(.skip-link) {
