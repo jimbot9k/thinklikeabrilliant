@@ -65,12 +65,13 @@
 			class="lang-select"
 			aria-label={tl.langLabel}
 			value={locale.current}
-			onchange={(e) => locale.set((e.currentTarget as HTMLSelectElement).value as 'en' | 'zh' | 'de' | 'es')}
+			onchange={(e) => locale.set((e.currentTarget as HTMLSelectElement).value as 'en' | 'zh' | 'de' | 'es' | 'fr')}
 		>
 			<option value="en">English</option>
 			<option value="zh">中文</option>
 			<option value="de">Deutsch</option>
 			<option value="es">Español</option>
+			<option value="fr">Français</option>
 		</select>
 	</div>
 </header>

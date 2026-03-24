@@ -1756,5 +1756,359 @@ export const translations: Record<Locale, Translation> = {
 				}
 			]
 		}
+	},
+
+	fr: {
+		layout: {
+			logo: 'pense comme un brillant',
+			skipLink: 'Aller au contenu principal',
+			githubAriaLabel: 'jimbot9k sur GitHub, s\u2019ouvre dans un nouvel onglet',
+			switchToLight: 'Passer au mode clair',
+			switchToDark: 'Passer au mode sombre',
+			langLabel: 'Choisir la langue',
+			headerAriaLabel: 'En-t\u00eate du site',
+			logoAriaLabel: 'Pense comme un Brillant, accueil',
+			donateLabel: 'Le p\u00e9lican ne travaille pas gratuitement.',
+			donateAriaLabel: 'Copier l\u2019adresse de don en Bitcoin',
+			copiedLabel: 'Copi\u00e9.',
+			footerAriaLabel: 'Pied de page'
+		},
+		quiz: {
+			meta: {
+				title: 'pense comme un brillant',
+				description:
+					'Un test de personnalit\u00e9 en 10 questions sur les p\u00e9licans, les sorciers et si tu penses comme un Brillant ou agis comme un Sot.'
+			},
+			intro: {
+				heading: 'Une br\u00e8ve et tr\u00e8s importante clarification.',
+				body: [
+					'Ceci est une \u00e9valuation cognitive en 10 questions con\u00e7ue pour d\u00e9terminer si tu penses comme un Brillant ou agis comme un Sot. Elle a \u00e9t\u00e9 d\u00e9velopp\u00e9e par des chercheurs qui prennent cela tr\u00e8s au s\u00e9rieux et qui pr\u00e9f\u00e9reraient que tu en fasses autant.',
+					'L\u2019\u00e9valuation fonctionne en te pr\u00e9sentant une s\u00e9rie de sc\u00e9narios (sociaux, financiers, m\u00e9taphysiques) et en mesurant la qualit\u00e9 de tes instincts. Il n\u2019y a pas de questions pi\u00e8ges. Il y a cependant des questions sur des p\u00e9licans, des sorciers et la cote de cr\u00e9dit de ton ombre.',
+					'Les Brillants r\u00e9pondent au monde avec clart\u00e9, intention et une l\u00e9g\u00e8re m\u00e9fiance envers les oies. Les Sots r\u00e9pondent avec de l\u2019\u00e9nergie, de la confiance et une absence quasi totale de suivi.',
+					'A la fin, tu seras class\u00e9. La classification est contraignante. R\u00e9ponds honn\u00eateur. L\u2019\u00e9valuation sait quand tu joues la com\u00e9die.'
+				],
+				cta: 'Commencer l\u2019\u00e9valuation'
+			},
+			questionLabel: (c, t) => `Question ${c} sur ${t}`,
+			progressAriaLabel: (c, t) => `Progression du test, question ${c} sur ${t}`,
+			questions: [
+				{
+					text: 'Tu te r\u00e9veilles et un p\u00e9lican est assis sur ta poitrine. Il tient ton t\u00e9l\u00e9phone. Il n\u2019a pas l\u2019air aimable. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu essaies imm\u00e9diatement de le charmer. Tu parles le langage des oiseaux.', score: -2 },
+						{ text: 'Tu cries \u00ab\u00a0mais c\u2019est quoi ce bordel\u00a0\u00bb jusqu\u2019\u00e0 ce que la situation se r\u00e9solve d\u2019elle-m\u00eame.', score: -1 },
+						{ text: 'Tu restes calme, tu \u00e9values l\u2019ambiance et tu n\u00e9gocies prudemment la r\u00e9cup\u00e9ration de ton t\u00e9l\u00e9phone.', score: 1 },
+						{ text: 'Tu observes son langage corporel, tu identifies ce qu\u2019il veut et tu ex\u00e9cutes un plan de r\u00e9cup\u00e9ration strat\u00e9gique.', score: 2 }
+					]
+				},
+				{
+					text: 'Un sorcier s\u2019invite dans tes DMs et t\u2019offre une connaissance infinie sur UN sujet. Tu as quatre secondes. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu r\u00e9ponds \u00ab\u00a0ok\u00a0\u00bb et tu \u00e9cris le premier mot qui te vient en t\u00eate. C\u2019est \u00ab\u00a0pâtes\u00a0\u00bb.', score: -2 },
+						{ text: 'Tu dis \u00ab\u00a0les vibrations\u00a0\u00bb et tu passes le reste de ta vie \u00e0 tout savoir sur les vibrations.', score: -1 },
+						{ text: 'Tu demandes si \u00ab\u00a0tout\u00a0\u00bb compte. Tu tergiverses. Tu n\u00e9gocies. Tu utilises sagement tes quatre secondes.', score: 1 },
+						{ text: 'Tu identifies instantan\u00e9ment le domaine de connaissance le plus strat\u00e9gique et tu le verrouilles. Sans h\u00e9sitation.', score: 2 }
+					]
+				},
+				{
+					text: 'Tu ouvres TikTok et chaque vid\u00e9o montre quelqu\u2019un expliquer avec une totale assurance quelque chose de compl\u00e8tement faux. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu likes tout. La confiance est contagieuse et franchement assez inspirante.', score: -2 },
+						{ text: 'Tu te sens bizarre mais tu continues \u00e0 scroller. Peut-\u00eatre qu\u2019ils savent quelque chose que tu ne sais pas.', score: -1 },
+						{ text: 'Tu v\u00e9rifies les plus suspects avant de partager quoi que ce soit.', score: 1 },
+						{ text: 'Tu retrouves les sources primaires, tu v\u00e9rifies les cr\u00e9dentiels et tu laisses des corrections poliment cit\u00e9es.', score: 2 }
+					]
+				},
+				{
+					text: 'Ton ombre prend des d\u00e9cisions de vie diff\u00e9rentes des tiennes depuis trois ans. Son score de cr\u00e9dit est meilleur et elle a une adh\u00e9sion \u00e0 une salle de sport. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu la d\u00e9nonces publiquement. Cette ombre ne m\u00e9rite pas \u00e7a.', score: -2 },
+						{ text: 'Tu te sens personnellement attaqu\u00e9, tu postes quelque chose de vague sur la trahison et tu passes \u00e0 autre chose.', score: -1 },
+						{ text: 'Tu lui demandes respectueusement ce qu\u2019elle a fait diff\u00e9remment et tu prends des notes.', score: 1 },
+						{ text: 'Tu demandes un d\u00e9tail complet de ses d\u00e9cisions, tu identifies les points de divergence et tu t\u2019adaptes imm\u00e9diatement.', score: 2 }
+					]
+				},
+				{
+					text: 'Un cheval t\u2019envoie un e-mail formel avec confirmation de lecture. Objet\u00a0: \u00ab\u00a0Concernant vos choix r\u00e9cents\u00a0\u00bb. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu le lis et ne r\u00e9ponds pas. Tu n\u2019as vraiment pas \u00e9nergie pour \u00e7a aujourd\u2019hui.', score: -2 },
+						{ text: 'Tu l\u2019ouvres, tu arrives au deuxi\u00e8me paragraphe, tu le fermes et tu te dis que tu y reviendras.', score: -1 },
+						{ text: 'Tu lis l\u2019int\u00e9gralit\u00e9 m\u00eame si c\u2019est inconfortable. C\u2019est l\u2019\u00e8re de la responsabilit\u00e9.', score: 1 },
+						{ text: 'Tu le lis attentivement, tu r\u00e9diges une r\u00e9ponse structur\u00e9e et tu planifies une r\u00e9union de suivi.', score: 2 }
+					]
+				},
+				{
+					text: 'Ton groupe WhatsApp part en vrille \u00e0 cause d\u2019une statistique captur\u00e9e depuis un compte al\u00e9atoire \u00e0 47 abonn\u00e9s. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu ajoutes trois emojis feu et tu contribues \u00e0 la propagation. Tu es un cr\u00e9ateur de culture.', score: -2 },
+						{ text: 'Tu r\u00e9agis avec un emoji mort de rire et tu passes. C\u2019est probablement assez vrai.', score: -1 },
+						{ text: 'Tu cherches sur Google avant de t\u2019ajouter au chaos.', score: 1 },
+						{ text: 'Tu retrouves l\u2019\u00e9tude originale, tu v\u00e9rifies la taille de l\u2019\u00e9chantillon et la m\u00e9thodologie, et tu postes le contexte r\u00e9el.', score: 2 }
+					]
+				},
+				{
+					text: 'Tu es dans un d\u00e9bat et trente secondes apr\u00e8s tu r\u00e9alises que l\u2019autre personne a enti\u00e8rement raison et que tu as enti\u00e8rement tort. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu redoubles. Reculer maintenant serait un comportement largement nul.', score: -2 },
+						{ text: 'Tu te tais, tu changes de sujet et tu esp\u00e8res que personne n\u2019a vu ce qui s\u2019est pass\u00e9.', score: -1 },
+						{ text: 'Tu concèdes le point avec ta dignit\u00e9 \u00e0 peu pr\u00e8s intacte.', score: 1 },
+						{ text: 'Tu concèdes imm\u00e9diatement, tu complimentes leur argument et tu leur demandes d\u2019en dire plus. S\u00fbr de toi.', score: 2 }
+					]
+				},
+				{
+					text: 'Des scientifiques annoncent que chaque d\u00e9cision que tu as prise un mardi \u00e9tait mauvaise. Toutes. Sans exception. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu annules les mardis dans ton foyer. C\u2019est une restructuration n\u00e9cessaire.', score: -2 },
+						{ text: 'Tu te convaincs que la plupart des mardis \u00e9taient en fait bien. Tu passes \u00e0 autre chose.', score: -1 },
+						{ text: 'Tu t\u2019assieds et tu r\u00e9vises honn\u00eateur tes d\u00e9cisions du mardi pour en trouver le mod\u00e8le.', score: 1 },
+						{ text: 'Tu analyses syst\u00e9matiquement le mod\u00e8le d\u2019erreur du mardi, tu construis une liste de v\u00e9rification des d\u00e9cisions et tu la d\u00e9ploies.', score: 2 }
+					]
+				},
+				{
+					text: 'Tu es depuis 40 minutes dans une pr\u00e9sentation tr\u00e8s assur\u00e9e sur le fromage quand tu r\u00e9alises que litt\u00e9ralement rien de ce que tu as dit n\u2019est exact. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu augmentes la confiance. Tu ne peux pas montrer de faiblesse. Tu manipules la salle.', score: -2 },
+						{ text: 'Tu dis \u00ab\u00a0bref\u00a0\u00bb et tu passes aux questions. Laisse le public se d\u00e9brouiller.', score: -1 },
+						{ text: 'Tu t\u2019arr\u00eates, tu reconnais l\u2019erreur et tu donnes un bref r\u00e9sum\u00e9 corrig\u00e9.', score: 1 },
+						{ text: 'Tu t\u2019arr\u00eates en pleine phrase, tu expliques exactement ce qui s\u2019est pass\u00e9, tu fournis les bonnes informations et tu t\u2019excuses aupr\u00e8s du fromage.', score: 2 }
+					]
+				},
+				{
+					text: 'Tu arrives \u00e0 ce que tu croyais \u00eatre un d\u00eener et c\u2019est en fait un entretien d\u2019embauche pour un poste que tu ne veux pas, anim\u00e9 par un panel de hiboux. Tu\u00a0:',
+					answers: [
+						{ text: 'Tu te comportes de mani\u00e8re enti\u00e8rement d\u00e9chai\u00een\u00e9e dans l\u2019entretien. Tu es diff\u00e9rent.', score: -2 },
+						{ text: 'Tu participes \u00e0 moiti\u00e9, communiquant un \u00ab\u00a0je suis l\u00e0 mais pas vraiment l\u00e0\u00a0\u00bb.', score: -1 },
+						{ text: 'Tu clarifie poliment la situation et tu demandes si la pr\u00e9sence est vraiment obligatoire.', score: 1 },
+						{ text: 'Tu \u00e9values ce que les hiboux ont besoin, tu appr\u00e9cies si tes comp\u00e9tences correspondent et tu prends une d\u00e9cision consciente sur ta participation.', score: 2 }
+					]
+				}
+			],
+			resultAriaLabel: 'Ton r\u00e9sultat',
+			brilliant: {
+				h2: 'Tu penses comme un Brillant.',
+				p: 'Tu abordes les probl\u00e8mes avec curiosit\u00e9, rigueur et patience. Tu mets \u00e0 jour tes croyances quand les preuves l\u2019exigent, et tu pr\u00e9f\u00e8res avoir raison que te sentir bien. Les questions difficiles ne te font pas peur. Elles te fascinent.',
+				scoreLabel: (s) => `Score\u00a0: ${s > 0 ? '+' : ''}${s}`,
+				exploreLink: 'explorer ce que cela signifie \u2192',
+				exploreLinkClass: 'explore-link brilliant-link',
+				imgAlt: 'Illustration pour le r\u00e9sultat Pense comme un Brillant'
+			},
+			fool: {
+				h2: 'Tu agis comme un Sot.',
+				p: 'Tu avances avec l\u2019instinct, la confiance et une belle t\u00e9m\u00e9rit\u00e9. Les d\u00e9tails ne t\u2019oppressent pas. Tu fais suer les d\u00e9tails. Le monde appelle \u00e7a le chaos. Toi tu appelles \u00e7a le mardi.',
+				scoreLabel: (s) => `Score\u00a0: ${s}`,
+				exploreLink: 'explorer ce que cela signifie \u2192',
+				exploreLinkClass: 'explore-link fool-link',
+				imgAlt: 'Illustration pour le r\u00e9sultat Agis comme un Sot'
+			},
+			percentileMessage: (p, result) => {
+				if (result === 'brilliant') {
+					if (p >= 95)
+						return `dans le top ${100 - p + 1}\u00a0% de tous ceux qui ont fait face au p\u00e9lican. Les hiboux t\u2019ont sur une liste restreinte.`;
+					if (p >= 80)
+						return `au-dessus de ${p}\u00a0% de tous les participants. Le sorcier te donnerait un bon sujet.`;
+					if (p >= 60) return `tu as d\u00e9pass\u00e9 ${p}\u00a0% de tout le monde. Tranquillement, discrètement brillant.`;
+					if (p >= 50)
+						return `juste au-dessus de la moiti\u00e9, un brillant modeste, ce qui est honn\u00eateur le genre le plus cr\u00e9dible.`;
+					return `techniquement brillant. Pratiquement quelconque. Le cheval a d\u00e9j\u00e0 vu \u00e7a et a des pens\u00e9es \u00e0 ce sujet.`;
+				} else {
+					if (p <= 5)
+						return `dans les ${p + 1}\u00a0% inf\u00e9rieurs. Tu es statistiquement le p\u00e9lican. Le p\u00e9lican n\u2019a pas de commentaires.`;
+					if (p <= 20)
+						return `seulement ${p}\u00a0% des gens ont marqu\u00e9 moins. Un sot convaincu. Profond\u00e9ment, authentiquement dans le r\u00f4le.`;
+					if (p <= 40)
+						return `${p}\u00a0% des gens ont marqu\u00e9 moins. Un sot d\u00e9vou\u00e9. L\u2019emoji feu dans le groupe, c\u2019\u00e9tait d\u00e9finitivement toi.`;
+					if (p <= 55)
+						return `autour du point m\u00e9dian. Tu es le genre de sot qui a failli ne pas l\u2019\u00eatre. Le cheval est perplexe mais solidaire.`;
+					return `au-dessus de ${p}\u00a0% de tous ceux qui se sont assis avec le p\u00e9lican, ce qui est beaucoup pour un sot. Le p\u00e9lican est g\u00e9nuinement \u00e9branlé.`;
+				}
+			},
+			tallying: 'calcul de tes r\u00e9sultats\u2026',
+			pelicansCount: (n) => `${n.toLocaleString('fr-FR')} personnes se sont assis dans le fauteuil du p\u00e9lican`,
+			restart: 'Refaire le test',
+			statsAriaLabel: 'Statistiques de score',
+			share: 'partager mon r\u00e9sultat',
+			shareAriaLabel: 'Partager ton r\u00e9sultat',
+			shareCopied: 'lien copi\u00e9.',
+			shareText: (result) =>
+				result === 'brilliant'
+					? `J\u2019ai \u00e9t\u00e9 officiellement class\u00e9 comme un Brillant. La classification est contraignante. https://thinklikeabrilliant.pro`
+					: `J\u2019ai \u00e9t\u00e9 officiellement class\u00e9 comme un Sot. La classification est contraignante. https://thinklikeabrilliant.pro`
+		},
+		brilliant: {
+			meta: {
+				title: 'Le Brillant\u00a0: Un guide de terrain',
+				description:
+					'Une plongée en profondeur exhaustive, révisée par des pairs et franchement épuisante dans ce que signifie penser comme un Brillant.'
+			},
+			back: 'retour au test',
+			backAriaLabel: 'Retour à la page d\u2019accueil du test',
+			heroAlt: 'Pense comme un Brillant',
+			h1: 'Tu penses comme un Brillant.',
+			subtitle:
+				'Une plongée en profondeur exhaustive, révisée par des pairs et franchement épuisante dans ce que cela signifie pour toi, pour la société et pour le pélican.',
+			takeAgain: 'Recommencer',
+			takeAgainAriaLabel: 'Refaire le test',
+			parts: [
+				{
+					h2: 'Partie I\u00a0: Qu\u2019est-ce qu\u2019un Brillant exactement\u00a0?',
+					paragraphs: [
+						'Un Brillant n\u2019est pas simplement une personne intelligente. Beaucoup de personnes intelligentes sont des idiots. Un Brillant est une personne qui a fait la paix avec le fait de ne pas savoir des choses, ce qui est ironique, car ne pas savoir des choses est extr\u00eamement inconfortable et la plupart des gens pr\u00e9f\u00e8reraient mourir plut\u00f4t que de rester avec une question sans r\u00e9ponse plus de quarante-cinq secondes.',
+						'Le Brillant s\u2019assied avec elle. Le Brillant pr\u00e9pare une tasse de th\u00e9, tire une chaise et dit \u00e0 la question sans r\u00e9ponse\u00a0: \u00ab\u00a0Bonjour. Tu as l\u2019air compliqu\u00e9e. J\u2019aimerais te comprendre. Cela peut prendre du temps. J\u2019ai lib\u00e9r\u00e9 mon agenda.\u00a0\u00bb La question sans r\u00e9ponse est, franchement, d\u00e9concert\u00e9e. Personne ne l\u2019avait jamais trait\u00e9e ainsi. La plupart des gens googl\u00e8nt simplement le premier r\u00e9sultat et passent \u00e0 autre chose. Le Brillant lit les citations.',
+						'C\u2019est \u00e0 la fois un don et une mal\u00e9diction, car le Brillant est souvent en retard.'
+					]
+				},
+				{
+					h2: 'Partie II\u00a0: L\u2019origine du Brillant',
+					paragraphs: [
+						'Les historiens ne s\u2019accordent pas sur le moment o\u00f9 le premier Brillant est apparu. Certains disent que c\u2019\u00e9tait Aristote, qui disait c\u00e9l\u00e8brement que plus on sait, plus on sait qu\u2019on ne sait pas, ce qui est le genre de chose qu\u2019un Brillant dit juste avant que tout le monde \u00e0 la f\u00eate ne se d\u00e9place dans une autre pi\u00e8ce.',
+						'D\u2019autres disent que c\u2019\u00e9tait celui qui a invent\u00e9 l\u2019\u00e9tude en double aveugle, parce que cette personne a regard\u00e9 toute l\u2019histoire de l\u2019auto-illusion humaine et a dit \u00ab\u00a0et si on se rendait plus difficile de se mentir \u00e0 soi-m\u00eame\u00a0\u00bb et tous les autres ont dit \u00ab\u00a0pourquoi voudrions-nous \u00e7a\u00a0\u00bb et le Brillant a dit \u00ab\u00a0je vais vous expliquer\u00a0\u00bb et a proced\u00e9 \u00e0 le faire pendant quarante ans.',
+						'Le Brillant a toujours exist\u00e9. C\u2019\u00e9tait celui dans la grotte qui demandait \u00ab\u00a0mais POURQUOI le feu br\u00fble\u00a0\u00bb pendant que tous les autres essayaient juste de cuire un mammouth. Ils \u00e9taient \u00e9galement agaçants \u00e0 l\u2019\u00e9poque, mais ils avaient raison, et finalement les gens ont compris.'
+					]
+				},
+				{
+					h2: 'Partie III\u00a0: Traits cl\u00e9s du Brillant (document\u00e9s)',
+					paragraphs: [
+						{
+							trait: 'Trait 1\u00a0: L\u2019aisance avec l\u2019erreur.',
+							text: ' Le Brillant a d\u00e9couvert qu\u2019avoir tort n\u2019est pas, en fait, fatal. C\u2019\u00e9tait aussi une surprise pour lui. Il a eu tort \u00e0 propos de quelque chose et il n\u2019est pas mort. Il a mis \u00e0 jour son syst\u00e8me de croyances. Il est pass\u00e9 \u00e0 autre chose. Il cherche maintenant activement des situations o\u00f9 il pourrait avoir tort, ce que ses amis trouvent \u00e9puisant et ce qui s\u2019appelle techniquement \u00ab\u00a0avoir des standards intellectuels\u00a0\u00bb.'
+						},
+						{
+							trait: 'Trait 2\u00a0: L\u2019incapacit\u00e9 de partager des statistiques non v\u00e9rifi\u00e9es.',
+							text: ' Quand le groupe WhatsApp devient fou \u00e0 cause d\u2019une statistique d\u2019un compte appel\u00e9 @ZoneV\u00e9rit\u00e947, le Brillant ressent une sensation physique dans la poitrine. Il ouvre le fil. Il cherche des sources. Il d\u00e9couvre que la statistique a \u00e9t\u00e9 invent\u00e9e par quelqu\u2019un qui avait une mauvaise journ\u00e9e. Il poste la correction. Personne ne r\u00e9agit. Il la poste quand m\u00eame. Il la postera toujours.'
+						},
+						{
+							trait: 'Trait 3\u00a0: Suspicieusement bon pour estimer les choses.',
+							text: ' Le Brillant a lu \u00e0 un moment donn\u00e9 quelque chose sur l\u2019estimation de Fermi et ne s\u2019en est jamais vraiment remis. Il peut maintenant te dire approximativement combien d\u2019accordeurs de piano il y a \u00e0 Paris, combien de temps il faudrait pour marcher jusqu\u2019\u00e0 la Lune, et combien de litres de cr\u00e8me p\u00e2tissi\u00e8re il faudrait pour remplir une piscine olympique. Personne n\u2019a demand\u00e9 tout cela. Le Brillant l\u2019offre librement.'
+						},
+						{
+							trait: 'Trait 4\u00a0: Les notes.',
+							text: ' Le Brillant prend des notes. Pas seulement au travail ou en cours. Partout. Sur son t\u00e9l\u00e9phone. Dans les marges des re\u00e7us. Sur son bras si n\u00e9cessaire. Il a un dossier de notes avec 847 messages vocaux non tri\u00e9s. Il a un document appel\u00e9 \u00ab\u00a0id\u00e9es - divers\u00a0\u00bb qui fait 34\u00a0000 mots. Il ne l\u2019a jamais relookup. L\u2019acte de capturer la pens\u00e9e est le point. La pens\u00e9e est en s\u00e9curit\u00e9. La pens\u00e9e a \u00e9t\u00e9 enregistr\u00e9e. Le Brillant peut maintenant dormir.'
+						},
+						{
+							trait: 'Trait 5\u00a0: Une relation compliqu\u00e9e avec la confiance.',
+							text: ' Le Brillant est confiant, mais pas de mani\u00e8re bruyante. Il est confiant de mani\u00e8re sp\u00e9cifique et structurelle. Il dit \u00ab\u00a0je ne suis pas s\u00fbr de \u00e7a\u00a0\u00bb plus que tout autre type de personne, et paradoxalement cela le rend plus fiable que les gens qui disent \u00ab\u00a0d\u00e9finitivement\u00a0\u00bb sur tout. Si un Brillant dit qu\u2019il est s\u00fbr, il l\u2019est. Tu peux construire une maison dessus. Tu peux l\u2019emmener en justice. Tu peux en parler au d\u00eener de famille.'
+						}
+					]
+				},
+				{
+					h2: 'Partie IV\u00a0: Le Brillant dans les situations sociales',
+					paragraphs: [
+						'Le Brillant lors d\u2019un d\u00eener est un sp\u00e9cimen fascinant. Il arrive l\u00e9g\u00e8rement en retard parce qu\u2019il lisait encore une chose. Il apporte du vin qu\u2019il a research\u00e9. Il \u00e9coute plus qu\u2019il ne parle, ce que les gens trouvent soit rafra\u00eeachissant soit d\u00e9concertant selon qu\u2019ils sont eux-m\u00eames des Brillants.',
+						'Quand un sujet dont il sait peu de chose vient sur le tapis, le Brillant dit \u00ab\u00a0je ne sais pas grand-chose l\u00e0-dessus, dis-m\u2019en plus\u00a0\u00bb. Quand un sujet dont il sait beaucoup survient, il dit \u00ab\u00a0il y a en fait des nuances int\u00e9ressantes ici\u00a0\u00bb et sent imm\u00e9diatement l\u2019\u00e9nergie de la salle et d\u00e9cide de le garder pour quelqu\u2019un qui veut savoir.',
+						'Le Brillant a dix-sept opinions qui attendent le bon moment pour \u00eatre partag\u00e9es. Ce moment n\u2019est pas venu. Il a ces opinions depuis longtemps. Elles sont toujours valides. Il les garde.'
+					]
+				},
+				{
+					h2: 'Partie V\u00a0: Le Brillant et le p\u00e9lican',
+					paragraphs: [
+						'La question du p\u00e9lican, la question fondamentale de cette \u00e9valuation, est cruciale. Car le Brillant, en trouvant un p\u00e9lican sur sa poitrine tenant son t\u00e9l\u00e9phone, n\u2019a pas paniqu\u00e9. Il a observ\u00e9. Il a \u00e9valu\u00e9. Il a demand\u00e9\u00a0: que veut ce p\u00e9lican\u00a0? Est-ce le t\u00e9l\u00e9phone sp\u00e9cifiquement, ou le t\u00e9l\u00e9phone repr\u00e9sente-t-il quelque chose\u00a0? Ce p\u00e9lican est-il une m\u00e9taphore\u00a0? Est-ce un jeudi\u00a0? Ce sont des questions raisonnables.',
+						'Le Brillant sait que la plupart des probl\u00e8mes, y compris ceux bas\u00e9s sur des p\u00e9licans, ont une logique interne. Trouve la logique, trouve la solution. Le p\u00e9lican a des motivations. Le p\u00e9lican a un contexte. Le p\u00e9lican n\u2019est pas simplement un agent du chaos\u00a0\u2014 c\u2019est un syst\u00e8me, et les syst\u00e8mes peuvent \u00eatre compris.',
+						'Le Brillant a r\u00e9cup\u00e9r\u00e9 son t\u00e9l\u00e9phone. Il a \u00e9galement appris trois faits sur le comportement des p\u00e9licans qu\u2019il ne connaissait pas avant. Il les a not\u00e9s dans son application de notes. Le document s\u2019appelle \u00ab\u00a0p\u00e9lican - divers\u00a0\u00bb. Il fait 400 mots. Il y a un document de suivi appel\u00e9 \u00ab\u00a0p\u00e9lican - lectures compl\u00e9mentaires\u00a0\u00bb. Il ne le regrette pas.'
+					]
+				},
+				{
+					h2: 'Partie VI\u00a0: Ce que cela signifie pour ton avenir',
+					paragraphs: [
+						'Tu vas bien t\u2019en sortir. Mieux que bien, en fait. Tu vas \u00eatre la personne dans la salle qui sait de quoi elle parle, qui change d\u2019avis quand les preuves changent, et qui pose des questions qui font que les autres se sentent \u00e0 la fois l\u00e9g\u00e8rement vus et l\u00e9g\u00e8rement mal \u00e0 l\u2019aise.',
+						'Tu auras raison sur des choses avant les autres. C\u2019est \u00e0 la fois un super-pouvoir et une source de frustration de faible intensit\u00e9 que tu as appris \u00e0 g\u00e9rer gr\u00e2ce au journal, aux promenades et \u00e0 avoir raison \u00e0 voix haute quand les enjeux sont suffisamment \u00e9lev\u00e9s pour le justifier.',
+						'Les hiboux te respectent. L\u2019e-mail du cheval attend. L\u2019offre du sorcier tient toujours.',
+						'Va \u00eatre brilliant. Tu l\u2019es d\u00e9j\u00e0.'
+					]
+				}
+			]
+		},
+		fool: {
+			meta: {
+				title: 'Le Sot\u00a0: Une c\u00e9l\u00e9bration',
+				description:
+					'Un examen exhaustif, affectueux et seulement l\u00e9g\u00e8rement pr\u00e9occup\u00e9 du Sot. Le p\u00e9lican a refus\u00e9 de commenter.'
+			},
+			back: 'retour au test',
+			backAriaLabel: 'Retour \u00e0 la page d\u2019accueil du test',
+			heroAlt: 'Agis comme un Sot',
+			h1: 'Tu agis comme un Sot.',
+			subtitle:
+				'Un examen exhaustif, affectueux et seulement l\u00e9g\u00e8rement pr\u00e9occup\u00e9 du Sot\u00a0: qui il est, comment il en est arriv\u00e9 l\u00e0, et pourquoi le p\u00e9lican, franchement, n\u2019avait aucune chance.',
+			takeAgain: 'Recommencer',
+			takeAgainAriaLabel: 'Refaire le test',
+			parts: [
+				{
+					h2: 'Partie I\u00a0: Pour la d\u00e9fense du Sot',
+					paragraphs: [
+						'Mettons une chose au clair\u00a0: le Sot n\u2019est pas stupide. Le Sot a simplement d\u00e9cid\u00e9 que la distance entre une question et une r\u00e9ponse ne doit pas \u00eatre tr\u00e8s longue, et op\u00e8re selon ce principe depuis si longtemps que cela ressemble maintenant \u00e0 un trait de caract\u00e8re, parce que c\u2019en est un.',
+						'Le Sot est la personne qui a d\u00e9j\u00e0 pris la d\u00e9cision avant que tu aies fini d\u2019expliquer la situation. Il est d\u00e9j\u00e0 en mouvement. Il est d\u00e9j\u00e0 engag\u00e9. Le plan, au sens traditionnel du terme, a \u00e9t\u00e9 saut\u00e9, mais une sorte de belle confiance cin\u00e9tique a \u00e9t\u00e9 substitu\u00e9e \u00e0 sa place, et la plupart du temps, pas toujours, mais la plupart, cela marche bien.',
+						'Le Sot a appris les choses \u00e0 la dure. Chaque fois. Sans exception. Il n\u2019a jamais lu un avertissement et ensuite pens\u00e9 \u00ab\u00a0heureusement que j\u2019ai lu \u00e7a\u00a0\u00bb. Il lit l\u2019avertissement apr\u00e8s coup, hoche lentement la t\u00eate et dit \u00ab\u00a0oui, \u00e7a fait sens\u00a0\u00bb.'
+					]
+				},
+				{
+					h2: 'Partie II\u00a0: Le Sot historique',
+					paragraphs: [
+						'Le Sot existe depuis le d\u00e9but de l\u2019histoire \u00e9crite et peut-\u00eatre avant. C\u2019\u00e9tait presque certainement un Sot qui a touch\u00e9 le feu en premier pour voir ce qui se passerait. C\u2019\u00e9tait presque certainement un Sot qui est mont\u00e9 sur un rondin et a flott\u00e9 sur une rivi\u00e8re et a invent\u00e9 les bateaux, non pas parce qu\u2019il avait un plan pour inventer des bateaux, mais parce qu\u2019il est mont\u00e9 sur un rondin. Le bateau \u00e9tait une surprise pour tout le monde, y compris pour lui.',
+						'Les bouffons de cour s\u2019appelaient Sots, et ils \u00e9taient les seuls autoris\u00e9s \u00e0 dire la v\u00e9rit\u00e9 au roi. R\u00e9fl\u00e9chis \u00e0 cela. La personne avec apparemment le moins de d\u00e9f\u00e9rence envers la convention \u00e9tait, structurellement parlant, la personne la plus honn\u00eate de la pi\u00e8ce. Le Sot a toujours su des choses. Il les a simplement sues dans une direction diff\u00e9rente.',
+						'Beaucoup des plus grands moments de l\u2019histoire humaine ont \u00e9t\u00e9 caus\u00e9s par quelqu\u2019un qui faisait quelque chose qu\u2019il n\u2019aurait probablement pas d\u00fb faire sans y r\u00e9fl\u00e9chir trop. Le Sot est le moteur du progr\u00e8s accidentel. Il ne voulait pas le d\u00e9couvrir. Il \u00e9tait juste dans les parages.'
+					]
+				},
+				{
+					h2: 'Partie III\u00a0: Traits cl\u00e9s du Sot (observ\u00e9s sur le terrain)',
+					paragraphs: [
+						{
+							trait: 'Trait 1\u00a0: La confiance qui pr\u00e9c\u00e8de l\u2019information.',
+							text: ' Le Sot est confiant d\u2019abord et recueille ensuite les preuves au besoin, ce qui est techniquement \u00e0 l\u2019envers mais a l\u2019avantage distinct de la vitesse. Au moment o\u00f9 la personne prudente a fini son \u00e9valuation des risques, le Sot a d\u00e9j\u00e0 commenc\u00e9, \u00e9chou\u00e9 peut-\u00eatre, s\u2019est regroup\u00e9 et a recommenc\u00e9 avec plus d\u2019informations que l\u2019\u00e9valuation des risques n\u2019en aurait fourni. Cela s\u2019appelle \u00ab\u00a0apprentissage empirique\u00a0\u00bb quand les scientifiques le font dans des laboratoires. Quand le Sot le fait, cela s\u2019appelle \u00ab\u00a0l\u2019incident\u00a0\u00bb.'
+						},
+						{
+							trait: 'Trait 2\u00a0: Une capacit\u00e9 imp\u00e9ccable \u00e0 improviser.',
+							text: ' Le Sot n\u2019a pas de plan B. Il a quelque chose de mieux\u00a0: la totale confiance qu\u2019il s\u2019en sortira quand il y sera. Et il s\u2019en sort g\u00e9n\u00e9ralement. Pas toujours \u00e9l\u00e9gamment. Pas toujours sans dommages collat\u00e9raux. Mais il y arrive. Il s\u2019en sort. Il y a quelque chose de vraiment remarquable chez une personne qui peut entrer dans une situation sans pr\u00e9paration et s\u2019en sortir, m\u00eame si \u00ab\u00a0s\u2019en sortir\u00a0\u00bb fait beaucoup de travail lourd dans cette phrase.'
+						},
+						{
+							trait: 'Trait 3\u00a0: Le charme.',
+							text: ' Que ce soit un p\u00e9lican, un douanier ou un cheval avec une plainte formelle, le Sot croit sinc\u00e8rement qu\u2019il peut parler pour entrer ou sortir de n\u2019importe quelle situation. Et il ne le fait pas gr\u00e2ce \u00e0 une rh\u00e9torique soign\u00e9e ou une communication strat\u00e9gique, mais gr\u00e2ce \u00e0 sa pure pr\u00e9sence et \u00e0 l\u2019\u00e9nergie de quelqu\u2019un qui n\u2019a jamais consid\u00e9r\u00e9 que cela pourrait ne pas marcher. Le p\u00e9lican, soyons honn\u00eates, \u00e9tait \u00e9branlé.'
+						},
+						{
+							trait: 'Trait 4\u00a0: La fid\u00e9lit\u00e9 \u00e0 la chose.',
+							text: ' Si le Sot s\u2019engage envers quelque chose, une blague, un plan, un mot mal prononc\u00e9, une statistique incorrecte qu\u2019il a d\u00e9j\u00e0 partag\u00e9e avec quinze personnes, il va au bout. Changer de cap en cours de route n\u00e9cessiterait de reconnaître que la direction initiale \u00e9tait mauvaise, ce qui est vraiment une chose de Brillant \u00e0 faire et que le Sot trouve presque physiquement impossible. C\u2019est un d\u00e9faut. C\u2019est aussi, d\u2019une certaine mani\u00e8re, une forme d\u2019int\u00e9grit\u00e9.'
+						},
+						{
+							trait: 'Trait 5\u00a0: Le probl\u00e8me du mardi.',
+							text: ' Chaque Sot a un mardi. Peut-\u00eatre que ce n\u2019est pas litt\u00e9ralement le mardi. Peut-\u00eatre que c\u2019est le budget. Peut-\u00eatre que c\u2019est lire avant d\u2019accepter. Peut-\u00eatre que c\u2019est de ne pas r\u00e9pondre aux e-mails \u00e0 2h du matin. Il y a un mod\u00e8le. Le Sot conna\u00eet le mod\u00e8le. Le Sot conna\u00eet le mod\u00e8le depuis plusieurs ann\u00e9es. Le Sot n\u2019a pas trait\u00e9 le mod\u00e8le. Le Sot a cependant nomm\u00e9 le mod\u00e8le, ce qui est la premi\u00e8re \u00e9tape, et cela compte pour quelque chose, et le Sot en est fier.'
+						}
+					]
+				},
+				{
+					h2: 'Partie IV\u00a0: Le Sot dans les situations sociales',
+					paragraphs: [
+						'Le Sot lors d\u2019un d\u00eener est un \u00e9v\u00e9nement. Il arrive avec une histoire d\u00e9j\u00e0 en cours. L\u2019histoire implique quelque chose qui s\u2019est pass\u00e9 en venant ici et est d\u00e9j\u00e0 plus int\u00e9ressante que tout ce que le Brillant a apport\u00e9, qui est une bouteille de vin research\u00e9 et dix-sept opinions sur la g\u00e9opolitique qu\u2019il a d\u00e9cid\u00e9 de ne pas partager.',
+						'Le Sot dira quelque chose qu\u2019il regrettera imm\u00e9diatement et ensuite construira dessus plut\u00f4t que de reculer. Le Sot partagera une statistique qu\u2019il ne peut pas sourcer. Le Sot entrera dans un d\u00e9bat pour lequel il n\u2019est pas pr\u00e9par\u00e9 et le combattra seul sur des vibes, perdant du terrain lentement et pivotant facilement \u00e0 chaque fois sans jamais techniquement c\u00e9der le point.',
+						'Tout le monde \u00e0 la f\u00eate se souvient du Sot. Pas toujours avec affection, pas toujours correctement, mais toujours.'
+					]
+				},
+				{
+					h2: 'Partie V\u00a0: Le Sot et le p\u00e9lican',
+					paragraphs: [
+						'Le p\u00e9lican a r\u00e9veill\u00e9 le Sot. C\u2019\u00e9tait d\u00e9j\u00e0 une erreur de la part du p\u00e9lican, le Sot avant le caf\u00e9 est une cr\u00e9ature compl\u00e8tement diff\u00e9rente, mais mettons cela de c\u00f4t\u00e9. Le premier instinct du Sot \u00e9tait de n\u00e9gocier en parlant le langage des oiseaux. Il ne parle pas le langage des oiseaux. Il parle le langage des oiseaux de la m\u00eame fa\u00e7on qu\u2019il parle anglais, avec confiance et incorrectement, et d\u2019une certaine fa\u00e7on cela communique quelque chose, car la confiance dans une langue c\u2019est quatre-vingt-dix pourcent de la langue.',
+						'Le p\u00e9lican n\u2019a pas \u00e9t\u00e9 charm\u00e9 avec succ\u00e8s. Le t\u00e9l\u00e9phone a \u00e9t\u00e9 r\u00e9cup\u00e9r\u00e9 par des moyens qui restent flous. Le Sot a maintenant une excellente histoire \u00e0 ce sujet. L\u2019histoire s\u2019am\u00e9liore \u00e0 chaque fois qu\u2019il la raconte. L\u2019ann\u00e9e prochaine, le p\u00e9lican aura \u00e9t\u00e9 trois p\u00e9licans et le t\u00e9l\u00e9phone aura \u00e9t\u00e9 tout son portefeuille.',
+						'Le p\u00e9lican a refus\u00e9 de commenter.'
+					]
+				},
+				{
+					h2: 'Partie VI\u00a0: L\u2019e-mail du cheval',
+					paragraphs: [
+						'Tu l\u2019as lu sans r\u00e9pondre. Parlons-en.',
+						'Le cheval t\u2019a \u00e9crit. Le cheval, qui a des sabots et pas de pouces oppos\u00e9s et a donc tap\u00e9 tout cet e-mail avec soit un logiciel de dictation soit une pure d\u00e9termination, a contact\u00e9 formellement avec confirmation de lecture activ\u00e9e. Ce n\u2019\u00e9tait pas une communication informelle. C\u2019\u00e9tait le cheval qui dit\u00a0: j\u2019ai quelque chose \u00e0 te dire, et je veux savoir que tu l\u2019as entendu.',
+						'Tu l\u2019as lu sans r\u00e9pondre.',
+						'C\u2019est bien. C\u2019est tr\u00e8s toi. L\u2019e-mail est toujours l\u00e0. Il est l\u00e0 depuis un moment. Le cheval sait que tu l\u2019as lu. Le cheval attend. Le cheval n\u2019a pas d\u2019autres plans\u00a0; les chevaux n\u2019ont notoirement pas d\u2019agendas charg\u00e9s. Un jour tu ouvriras cet e-mail et il contiendra quelque chose dont tu avais besoin d\u2019entendre et tu seras content, \u00e0 ta fa\u00e7on de Sot particulier, d\u2019y \u00eatre finalement arriv\u00e9.',
+						'R\u00e9ponds quand tu es pr\u00eat. Le cheval ne va nulle part. Litt\u00e9ralement. C\u2019est un cheval.'
+					]
+				},
+				{
+					h2: 'Partie VII\u00a0: En conclusion, tu es magnifique',
+					paragraphs: [
+						'Le monde a besoin de Brillants, oui. Le monde a besoin de personnes qui lisent les notes de bas de page et v\u00e9rifient les tailles d\u2019\u00e9chantillon et planifient des r\u00e9unions de suivi avec des chevaux. Le monde ne peut vraiment pas fonctionner sans eux.',
+						'Mais le monde a aussi besoin de toi. Le monde a besoin de la personne qui monte sur le rondin avant d\u2019avoir compris qu\u2019il flotte. Le monde a besoin de la personne qui parle \u00e0 un p\u00e9lican en langage d\u2019oiseau et que \u00e7a marche d\u2019une certaine fa\u00e7on. Le monde a besoin de la personne qui dit \u00ab\u00a0bref\u00a0\u00bb et passe aux questions pendant la pr\u00e9sentation de fromage de sa vie, se secoue et recommence.',
+						'Le Sot n\u2019a pas de plan. Le Sot a quelque chose de mieux\u00a0: une volont\u00e9 compl\u00e8te et totale d\u2019\u00eatre dans la situation et de s\u2019en sortir. Ce n\u2019est pas rien. C\u2019est m\u00eame extraordinaire.',
+						'Le mardi, c\u2019est demain. Cette fois tu prendras une d\u00e9cision diff\u00e9rente. Ou non, et tu auras une autre excellente histoire. Dans tous les cas, \u00e7a va \u00eatre quelque chose.'
+					]
+				}
+			]
+		}
 	}
 };
