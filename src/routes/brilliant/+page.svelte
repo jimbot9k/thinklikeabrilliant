@@ -3,18 +3,29 @@
 	import { translations } from '$lib/translations';
 
 	const t = $derived(translations[locale.current].brilliant);
+	const schemaLD = $derived(JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		'headline': t.meta.title,
+		'description': t.meta.description,
+		'url': 'https://thinklikeabrilliant.pro/brilliant',
+		'author': { '@type': 'Person', 'name': 'jimbot9k' }
+	}));
 </script>
 
 <svelte:head>
 	<title>{t.meta.title}</title>
 	<meta name="description" content={t.meta.description} />
+	<meta name="keywords" content="think like a brilliant, brilliant personality type, intellectual traits, critical thinking quiz result, how smart am I, brilliant thinker guide, cognitive quiz" />
+	<link rel="canonical" href="https://thinklikeabrilliant.pro/brilliant" />
 	<meta property="og:title" content={t.meta.title} />
 	<meta property="og:description" content={t.meta.description} />
-	<meta property="og:url" content="https://thinklikeabrilliant.com/brilliant" />
-	<meta property="og:image" content="/brilliant.png" />
+	<meta property="og:url" content="https://thinklikeabrilliant.pro/brilliant" />
+	<meta property="og:image" content="https://thinklikeabrilliant.pro/brilliant.png" />
 	<meta name="twitter:title" content={t.meta.title} />
 	<meta name="twitter:description" content={t.meta.description} />
-	<meta name="twitter:image" content="/brilliant.png" />
+	<meta name="twitter:image" content="https://thinklikeabrilliant.pro/brilliant.png" />
+	{@html `<script type="application/ld+json">${schemaLD}<\/script>`}
 </svelte:head>
 
 <main id="main-content" tabindex="-1">

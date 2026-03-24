@@ -107,16 +107,29 @@
 		statsLoading = false;
 		statsError = false;
 	}
+
+	const schemaLD = $derived(JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Quiz',
+		'name': t.meta.title,
+		'description': t.meta.description,
+		'url': 'https://thinklikeabrilliant.pro/',
+		'author': { '@type': 'Person', 'name': 'jimbot9k' }
+	}));
 </script>
 
 <svelte:head>
 	<title>{t.meta.title}</title>
 	<meta name="description" content={t.meta.description} />
+	<meta name="keywords" content="personality quiz, are you brilliant or a fool, cognitive test, think like a brilliant, pelican quiz, funny personality test, satirical IQ test, smart or not quiz" />
+	<link rel="canonical" href="https://thinklikeabrilliant.pro/" />
 	<meta property="og:title" content={t.meta.title} />
 	<meta property="og:description" content={t.meta.description} />
-	<meta property="og:url" content="https://thinklikeabrilliant.com/" />
+	<meta property="og:url" content="https://thinklikeabrilliant.pro/" />
+	<meta property="og:image" content="https://thinklikeabrilliant.pro/brilliant.png" />
 	<meta name="twitter:title" content={t.meta.title} />
 	<meta name="twitter:description" content={t.meta.description} />
+	{@html `<script type="application/ld+json">${schemaLD}<\/script>`}
 </svelte:head>
 
 <main id="main-content" tabindex="-1">
