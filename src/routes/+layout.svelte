@@ -3,6 +3,11 @@
 	import { onMount } from 'svelte';
 	import { locale } from '$lib/locale.svelte';
 	import { translations } from '$lib/translations';
+	import { inject } from '@vercel/analytics';
+	import { injectSpeedInsights } from '@vercel/speed-insights';
+
+	inject();
+	injectSpeedInsights();
 
 	let { children } = $props();
 
