@@ -80,7 +80,7 @@ export const translations: Record<Locale, Translation> = {
 		},
 		quiz: {
 			meta: {
-				title: 'are you a brilliant?',
+				title: 'think like a brilliant',
 				description:
 					'A 10-question personality quiz about pelicans, wizards, and whether you think like a brilliant or act like a fool.'
 			},
