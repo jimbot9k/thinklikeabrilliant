@@ -20,8 +20,8 @@
 		const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
 		theme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 
-		const savedLocale = localStorage.getItem('locale') as 'en' | 'zh' | 'de' | null;
-		locale.init(savedLocale ?? (navigator.language.startsWith('de') ? 'de' : navigator.language.startsWith('zh') ? 'zh' : 'en'));
+		const savedLocale = localStorage.getItem('locale') as 'en' | 'zh' | 'de' | 'es' | 'fr' | 'ja' | null;
+		locale.init(savedLocale ?? (navigator.language.startsWith('de') ? 'de' : navigator.language.startsWith('zh') ? 'zh' : navigator.language.startsWith('ja') ? 'ja' : 'en'));
 	});
 
 	$effect(() => {
@@ -30,7 +30,7 @@
 	});
 
 	$effect(() => {
-		document.documentElement.lang = locale.current === 'zh' ? 'zh-CN' : locale.current === 'de' ? 'de' : 'en';
+		document.documentElement.lang = locale.current === 'zh' ? 'zh-CN' : locale.current === 'de' ? 'de' : locale.current === 'es' ? 'es' : locale.current === 'fr' ? 'fr' : locale.current === 'ja' ? 'ja' : 'en';
 		localStorage.setItem('locale', locale.current);
 	});
 
@@ -70,13 +70,14 @@
 			class="lang-select"
 			aria-label={tl.langLabel}
 			value={locale.current}
-			onchange={(e) => locale.set((e.currentTarget as HTMLSelectElement).value as 'en' | 'zh' | 'de' | 'es' | 'fr')}
+			onchange={(e) => locale.set((e.currentTarget as HTMLSelectElement).value as 'en' | 'zh' | 'de' | 'es' | 'fr' | 'ja')}
 		>
 			<option value="en">English</option>
 			<option value="zh">中文</option>
 			<option value="de">Deutsch</option>
 			<option value="es">Español</option>
 			<option value="fr">Français</option>
+			<option value="ja">日本語</option>
 		</select>
 	</div>
 </header>
