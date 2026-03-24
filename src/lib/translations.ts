@@ -85,7 +85,7 @@ export const translations: Record<Locale, Translation> = {
 			switchToDark: 'Switch to dark mode',
 			langLabel: 'Select language',
 			headerAriaLabel: 'Site header',
-			logoAriaLabel: 'Think Like a Brilliant — home',
+			logoAriaLabel: 'Think Like a Brilliant, home',
 			donateLabel: 'The pelican does not work for free.',
 			donateAriaLabel: 'Copy Bitcoin donation address',
 			copiedLabel: 'Copied.',
@@ -101,9 +101,9 @@ export const translations: Record<Locale, Translation> = {
 				heading: 'A brief, important clarification.',
 				body: [
 					'This is a 10-question cognitive assessment designed to determine whether you think like a Brilliant or act like a Fool. It was developed by researchers who take this very seriously and would prefer you did too.',
-					'The assessment works by presenting you with a series of scenarios — social, financial, metaphysical — and measuring the quality of your instincts. There are no trick questions. There are, however, questions about pelicans, wizards, and your shadow\'s credit score.',
+					'The assessment works by presenting you with a series of scenarios (social, financial, metaphysical) and measuring the quality of your instincts. There are no trick questions. There are, however, questions about pelicans, wizards, and your shadow\'s credit score.',
 					'Brilliants respond to the world with clarity, intention, and mild suspicion of geese. Fools respond with energy, confidence, and a near-total absence of follow-through.',
-					'At the end, you will be classified. The classification is binding. Answer honestly — the assessment knows when you\'re performing.'
+					'At the end, you will be classified. The classification is binding. Answer honestly. The assessment knows when you\'re performing.'
 				],
 				cta: 'Begin the assessment'
 			},
@@ -297,7 +297,7 @@ export const translations: Record<Locale, Translation> = {
 			resultAriaLabel: 'Your result',
 			brilliant: {
 				h2: 'You Think Like a Brilliant.',
-					p: "You approach problems with curiosity, rigor, and patience. You update your beliefs when the evidence demands it, and you'd rather be right than feel right. The hard questions don't scare you — they fascinate you.",
+					p: "You approach problems with curiosity, rigor, and patience. You update your beliefs when the evidence demands it, and you'd rather be right than feel right. The hard questions don't scare you. They fascinate you.",
 				scoreLabel: (s) => `Score: ${s > 0 ? '+' : ''}${s}`,
 				exploreLink: 'explore what this means →',
 				exploreLinkClass: 'explore-link brilliant-link',
@@ -305,7 +305,7 @@ export const translations: Record<Locale, Translation> = {
 			},
 			fool: {
 				h2: 'You Act Like a Fool.',
-					p: "You lead with instinct, confidence, and beautiful recklessness. You don't sweat the details — you make the details sweat. The world calls it chaos. You call it Tuesday.",
+					p: "You lead with instinct, confidence, and beautiful recklessness. You don't sweat the details. You make the details sweat. The world calls it chaos. You call it Tuesday.",
 				scoreLabel: (s) => `Score: ${s}`,
 				exploreLink: 'explore what this means →',
 				exploreLinkClass: 'explore-link fool-link',
@@ -319,7 +319,7 @@ export const translations: Record<Locale, Translation> = {
 						return `higher than ${p}% of everyone who took this. the wizard would give you a good topic.`;
 					if (p >= 60) return `you outscored ${p}% of everyone here. comfortably, quietly brilliant.`;
 					if (p >= 50)
-						return `just above the halfway mark — a modest brilliant, which is honestly the most credible kind.`;
+						return `just above the halfway mark, a modest brilliant, which is honestly the most credible kind.`;
 					return `technically brilliant. practically mid. the horse has seen this before and has thoughts.`;
 				} else {
 					if (p <= 5)
@@ -329,7 +329,7 @@ export const translations: Record<Locale, Translation> = {
 					if (p <= 40)
 						return `${p}% of people scored lower. a devoted fool. the group chat fire emoji was definitely yours.`;
 					if (p <= 55)
-						return `hovering around the midpoint — you're the kind of fool that almost wasn't. the horse is confused but supportive.`;
+						return `hovering around the midpoint. you're the kind of fool that almost wasn't. the horse is confused but supportive.`;
 					return `higher than ${p}% of everyone who sat with the pelican, which is a lot for a fool. the pelican is genuinely rattled.`;
 				}
 			},
@@ -340,7 +340,7 @@ export const translations: Record<Locale, Translation> = {
 		},
 		brilliant: {
 			meta: {
-				title: 'The Brilliant — A Field Guide',
+				title: 'The Brilliant: A Field Guide',
 				description:
 					'A comprehensive, peer-reviewed, and frankly exhausting deep-dive into what it means to think like a brilliant.'
 			},
@@ -423,7 +423,7 @@ export const translations: Record<Locale, Translation> = {
 		},
 		fool: {
 			meta: {
-				title: 'The Fool — A Celebration',
+				title: 'The Fool: A Celebration',
 				description:
 					'A thorough, loving, and only slightly concerned examination of the Fool. The pelican has declined to comment.'
 			},
@@ -864,7 +864,7 @@ export const translations: Record<Locale, Translation> = {
 			switchToDark: 'Dunkles Design aktivieren',
 			langLabel: 'Sprache auswählen',
 			headerAriaLabel: 'Seitenheader',
-			logoAriaLabel: 'Denk wie ein Genie — Startseite',
+			logoAriaLabel: 'Denk wie ein Genie, Startseite',
 			donateLabel: 'Der Pelikan arbeitet nicht umsonst.',
 			donateAriaLabel: 'Bitcoin-Spendenadresse kopieren',
 			copiedLabel: 'Kopiert.',
@@ -880,9 +880,9 @@ export const translations: Record<Locale, Translation> = {
 				heading: 'Eine kurze, wichtige Klarstellung.',
 				body: [
 					'Dies ist eine kognitive Auswertung mit 10 Fragen, die feststellen soll, ob du wie ein Genie denkst oder wie ein Narr handelst. Sie wurde von Forschern entwickelt, die das sehr ernst nehmen, und sie würden es vorziehen, wenn du das auch tätest.',
-					'Die Auswertung funktioniert, indem dir eine Reihe von Szenarien präsentiert wird — soziale, finanzielle, metaphysische — und die Qualität deiner Instinkte gemessen wird. Es gibt keine Fangfragen. Es gibt jedoch Fragen über Pelikane, Zauberer und die Bonität deines Schattens.',
+					'Die Auswertung funktioniert, indem dir eine Reihe von Szenarien präsentiert wird (soziale, finanzielle, metaphysische) und die Qualität deiner Instinkte gemessen wird. Es gibt keine Fangfragen. Es gibt jedoch Fragen über Pelikane, Zauberer und die Bonität deines Schattens.',
 					'Genies begegnen der Welt mit Klarheit, Absicht und leichtem Misstrauen gegenüber Gänsen. Narren begegnen ihr mit Energie, Selbstvertrauen und einem nahezu vollständigen Fehlen von Konsequenz.',
-					'Am Ende wirst du eingestuft. Die Einstufung ist bindend. Antworte ehrlich — die Auswertung weiß, wann du schauspielst.'
+					'Am Ende wirst du eingestuft. Die Einstufung ist bindend. Antworte ehrlich. Die Auswertung weiß, wann du schauspielst.'
 				],
 				cta: 'Auswertung beginnen'
 			},
@@ -1076,7 +1076,7 @@ export const translations: Record<Locale, Translation> = {
 			resultAriaLabel: 'Dein Ergebnis',
 			brilliant: {
 				h2: 'Du denkst wie ein Genie.',
-				p: 'Du gehst mit Neugier, Strenge und Geduld an Probleme heran. Du aktualisierst deine Überzeugungen, wenn die Beweise es erfordern, und hast lieber recht als dich gut zu fühlen. Die schwierigen Fragen machen dir keine Angst — sie faszinieren dich.',
+				p: 'Du gehst mit Neugier, Strenge und Geduld an Probleme heran. Du aktualisierst deine Überzeugungen, wenn die Beweise es erfordern, und hast lieber recht als dich gut zu fühlen. Die schwierigen Fragen machen dir keine Angst. Sie faszinieren dich.',
 				scoreLabel: (s) => `Punkte: ${s > 0 ? '+' : ''}${s}`,
 				exploreLink: 'mehr dazu erfahren →',
 				exploreLinkClass: 'explore-link brilliant-link',
@@ -1084,7 +1084,7 @@ export const translations: Record<Locale, Translation> = {
 			},
 			fool: {
 				h2: 'Du handelst wie ein Narr.',
-				p: 'Du führst mit Instinkt, Selbstvertrauen und wunderschöner Rücksichtslosigkeit. Details machen dir nicht zu schaffen — du lässt die Details schwitzen. Die Welt nennt es Chaos. Du nennst es Dienstag.',
+				p: 'Du führst mit Instinkt, Selbstvertrauen und wunderschöner Rücksichtslosigkeit. Details machen dir nicht zu schaffen. Du lässt die Details schwitzen. Die Welt nennt es Chaos. Du nennst es Dienstag.',
 				scoreLabel: (s) => `Punkte: ${s}`,
 				exploreLink: 'mehr dazu erfahren →',
 				exploreLinkClass: 'explore-link fool-link',
@@ -1098,7 +1098,7 @@ export const translations: Record<Locale, Translation> = {
 						return `höher als ${p}% aller Teilnehmenden. Der Zauberer würde dir ein gutes Thema geben.`;
 					if (p >= 60) return `du hast ${p}% aller übertroffen. Ruhig und sicher genial.`;
 					if (p >= 50)
-						return `knapp über der Mittellinie — ein bescheidenes Genie, was ehrlich gesagt die glaubwürdigste Art ist.`;
+						return `knapp über der Mittellinie, ein bescheidenes Genie, was ehrlich gesagt die glaubwürdigste Art ist.`;
 					return `technisch gesehen genial. Praktisch gesehen mittelmäßig. Das Pferd hat das schon gesehen und hat Gedanken dazu.`;
 				} else {
 					if (p <= 5)
@@ -1108,7 +1108,7 @@ export const translations: Record<Locale, Translation> = {
 					if (p <= 40)
 						return `${p}% der Leute haben niedriger gepunktet. Ein treuer Narr. Das Flammen-Emoji im Chat war definitiv von dir.`;
 					if (p <= 55)
-						return `um den Mittelpunkt schwebend — du bist der Narr, der es fast nicht war. Das Pferd ist verwirrt, aber unterstützend.`;
+						return `um den Mittelpunkt schwebend. du bist der Narr, der es fast nicht war. Das Pferd ist verwirrt, aber unterstützend.`;
 					return `höher als ${p}% aller, die mit dem Pelikan saßen, was viel für einen Narren ist. Der Pelikan ist wirklich erschüttert.`;
 				}
 			},
@@ -1119,7 +1119,7 @@ export const translations: Record<Locale, Translation> = {
 		},
 		brilliant: {
 			meta: {
-				title: 'Das Genie — Ein Feldführer',
+				title: 'Das Genie: Ein Feldführer',
 				description:
 					'Ein umfassender, begutachteter und ehrlich gesagt erschöpfender Tiefen-Einblick, was es bedeutet, wie ein Genie zu denken.'
 			},
@@ -1202,7 +1202,7 @@ export const translations: Record<Locale, Translation> = {
 		},
 		fool: {
 			meta: {
-				title: 'Der Narr — Eine Hommage',
+				title: 'Der Narr: Eine Hommage',
 				description:
 					'Eine gründliche, liebevolle und nur leicht besorgte Betrachtung des Narren. Der Pelikan möchte sich nicht äußern.'
 			},
