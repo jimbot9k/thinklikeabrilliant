@@ -135,16 +135,16 @@
 		const p = percentile;
 		if (result === 'brilliant') {
 			if (p >= 95) return `top ${100 - p + 1}% of everyone who has faced the pelican. the owls have you on a shortlist.`;
-			if (p >= 80) return `higher than ${p}% of all players. the wizard would give you a good topic.`;
+			if (p >= 80) return `higher than ${p}% of everyone who took this. the wizard would give you a good topic.`;
 			if (p >= 60) return `you outscored ${p}% of everyone here. comfortably, quietly brilliant.`;
 			if (p >= 50) return `just above the halfway mark — a modest brilliant, which is honestly the most credible kind.`;
 			return `technically brilliant. practically mid. the horse has seen this before and has thoughts.`;
 		} else {
 			if (p <= 5) return `bottom ${p + 1}%. you are statistically the pelican. the pelican has no notes.`;
-			if (p <= 20) return `only ${p}% of players scored lower. a committed fool. deeply, authentically on brand.`;
-			if (p <= 40) return `${p}% of players scored lower. a devoted fool. the group chat fire emoji was definitely yours.`;
+			if (p <= 20) return `only ${p}% of people scored lower. a committed fool. deeply, authentically on brand.`;
+			if (p <= 40) return `${p}% of people scored lower. a devoted fool. the group chat fire emoji was definitely yours.`;
 			if (p <= 55) return `hovering around the midpoint — you're the kind of fool that almost wasn't. the horse is confused but supportive.`;
-			return `higher than ${p}% of players, which is a lot for a fool. the pelican is genuinely rattled.`;
+			return `higher than ${p}% of everyone who sat with the pelican, which is a lot for a fool. the pelican is genuinely rattled.`;
 		}
 	});
 
@@ -246,7 +246,7 @@
 				<div class="stats">
 					<p class="percentile-text">{percentileMessage}</p>
 					<ScoreChart {distribution} userScore={totalScore} total={statTotal} />
-					<p class="stat-count">{statTotal.toLocaleString()} players have sat in the pelican chair</p>
+					<p class="stat-count">{statTotal.toLocaleString()} people have sat in the pelican chair</p>
 				</div>
 			{/if}
 				<button class="restart-btn" onclick={restart}>Take it again</button>
