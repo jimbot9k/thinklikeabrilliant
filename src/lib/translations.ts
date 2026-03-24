@@ -346,8 +346,8 @@ export const translations: Record<Locale, Translation> = {
 			shareCopied: 'link copied.',
 			shareText: (result) =>
 				result === 'brilliant'
-					? `I have been officially classified as a Brilliant. The classification is binding. https://thinklikeabrilliant.com`
-					: `I have been officially classified as a Fool. The classification is binding. https://thinklikeabrilliant.com`
+					? `I have been officially classified as a Brilliant. The classification is binding. https://thinklikeabrilliant.pro`
+					: `I have been officially classified as a Fool. The classification is binding. https://thinklikeabrilliant.pro`
 		},
 		brilliant: {
 			meta: {
@@ -696,8 +696,8 @@ export const translations: Record<Locale, Translation> = {
 			shareCopied: '链接已复制。',
 			shareText: (result) =>
 				result === 'brilliant'
-					? `我已被正式认定为智者。该认定具有约束力。 https://thinklikeabrilliant.com`
-					: `我已被正式认定为逗比。该认定具有约束力。 https://thinklikeabrilliant.com`
+					? `我已被正式认定为智者。该认定具有约束力。 https://thinklikeabrilliant.pro`
+					: `我已被正式认定为逗比。该认定具有约束力。 https://thinklikeabrilliant.pro`
 		},
 		brilliant: {
 			meta: {
@@ -1139,8 +1139,8 @@ export const translations: Record<Locale, Translation> = {
 			shareCopied: 'Link kopiert.',
 			shareText: (result) =>
 				result === 'brilliant'
-					? `Ich wurde offiziell als Genie eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.com`
-					: `Ich wurde offiziell als Narr eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.com`
+					? `Ich wurde offiziell als Genie eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.pro`
+					: `Ich wurde offiziell als Narr eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.pro`
 		},
 		brilliant: {
 			meta: {
