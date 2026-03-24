@@ -1318,5 +1318,443 @@ export const translations: Record<Locale, Translation> = {
 				}
 			]
 		}
+	},
+
+	es: {
+		layout: {
+			logo: 'piensa como un brillante',
+			skipLink: 'Saltar al contenido principal',
+			githubAriaLabel: 'jimbot9k en GitHub, abre en nueva pestaña',
+			switchToLight: 'Cambiar a modo claro',
+			switchToDark: 'Cambiar a modo oscuro',
+			langLabel: 'Seleccionar idioma',
+			headerAriaLabel: 'Encabezado del sitio',
+			logoAriaLabel: 'Piensa como un Brillante, inicio',
+			donateLabel: 'El pelícano no trabaja gratis.',
+			donateAriaLabel: 'Copiar dirección de donación en Bitcoin',
+			copiedLabel: 'Copiado.',
+			footerAriaLabel: 'Pie de página'
+		},
+		quiz: {
+			meta: {
+				title: 'piensa como un brillante',
+				description:
+					'Un test de personalidad de 10 preguntas sobre pelícanos, magos y si piensas como un Brillante o actúas como un Bufón.'
+			},
+			intro: {
+				heading: 'Una breve y muy importante aclaración.',
+				body: [
+					'Esto es una evaluación cognitiva de 10 preguntas diseñada para determinar si piensas como un Brillante o actúas como un Bufón. Fue desarrollada por investigadores que se lo toman muy en serio y preferirían que tú también lo hicieras.',
+					'La evaluación funciona presentándote una serie de escenarios (sociales, financieros, metafísicos) y midiendo la calidad de tus instintos. No hay preguntas trampa. Sí hay, sin embargo, preguntas sobre pelícanos, magos y la puntuación crediticia de tu sombra.',
+					'Los Brillantes responden al mundo con claridad, intención y leve desconfianza hacia los gansos. Los Bufones responden con energía, confianza y una ausencia casi total de seguimiento.',
+					'Al final, serás clasificado. La clasificación es vinculante. Responde con honestidad. La evaluación sabe cuándo estás actuando.'
+				],
+				cta: 'Comenzar la evaluación'
+			},
+			questionLabel: (c, t) => `Pregunta ${c} de ${t}`,
+			progressAriaLabel: (c, t) => `Progreso del test, pregunta ${c} de ${t}`,
+			questions: [
+				{
+					text: 'Te despiertas y hay un pelícano sentado sobre tu pecho. Tiene tu teléfono. No parece amigable. Tú:',
+					answers: [
+						{ text: 'Intentas ligar con él de inmediato. Hablas idioma pájaro.', score: -2 },
+						{ text: 'Gritas "¡qué demonios es esto!" hasta que la situación se resuelve sola.', score: -1 },
+						{ text: 'Te mantienes calmado, evalúas el ambiente y negocias tu teléfono con cuidado.', score: 1 },
+						{
+							text: 'Observas su lenguaje corporal, identificas qué quiere y ejecutas un plan estratégico de recuperación.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Un mago se mete en tus DMs y te ofrece conocimiento infinito sobre UN tema. Tienes cuatro segundos. Tú:',
+					answers: [
+						{
+							text: 'Respondes "ok" y escribes la primera palabra que te viene a la cabeza. Es "fideos".',
+							score: -2
+						},
+						{
+							text: 'Dices "vibraciones" y pasas el resto de tu vida sabiendo todo sobre vibraciones.',
+							score: -1
+						},
+						{
+							text: 'Preguntas si "todo" cuenta. Das largas. Negocias. Usas los cuatro segundos con sabiduría.',
+							score: 1
+						},
+						{
+							text: 'Identificas al instante el área de conocimiento de mayor valor y la eliges sin dudar.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Abres TikTok y cada vídeo es alguien explicando algo completamente equivocado con total seguridad. Tú:',
+					answers: [
+						{
+							text: 'Das like a todo. La confianza es contagiosa y, seamos sinceros, bastante inspiradora.',
+							score: -2
+						},
+						{
+							text: 'Te sientes raro al respecto pero sigues deslizando. A lo mejor saben algo que tú no.',
+							score: -1
+						},
+						{ text: 'Verificas los más sospechosos antes de compartir nada.', score: 1 },
+						{
+							text: 'Buscas fuentes primarias, compruebas credenciales y dejas correcciones con citas corteses.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Tu sombra lleva tres años tomando decisiones vitales diferentes a las tuyas. Tiene mejor puntuación crediticia y membresía en un gimnasio. Tú:',
+					answers: [
+						{ text: 'La expones públicamente. Esta sombra NO está a la altura.', score: -2 },
+						{
+							text: 'Te sientes traicionado, publicas algo críptico sobre la deslealtad y sigues adelante.',
+							score: -1
+						},
+						{ text: 'Le preguntas respetuosamente qué ha estado haciendo diferente y tomas notas.', score: 1 },
+						{
+							text: 'Pides un desglose completo de sus decisiones, identificas los puntos de divergencia y te adaptas de inmediato.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Un caballo te manda un correo electrónico formal con confirmación de lectura. Asunto: "Sobre tus decisiones recientes". Tú:',
+					answers: [
+						{ text: 'Lo lees y lo ignoras. Hoy no tienes energía para esto.', score: -2 },
+						{
+							text: 'Lo abres, llegas al segundo párrafo, lo cierras y te dices que ya lo verás.',
+							score: -1
+						},
+						{ text: 'Lo lees entero aunque sea incómodo. Momento de rendir cuentas.', score: 1 },
+						{
+							text: 'Lo lees con atención, redactas una respuesta estructurada y programas una reunión de seguimiento.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Tu grupo de WhatsApp está enloqueciendo por una estadística que alguien capturó de una cuenta aleatoria con 47 seguidores. Tú:',
+					answers: [
+						{
+							text: 'Añades tres emojis de fuego y ayudas a propagarla. Eres un creador de cultura.',
+							score: -2
+						},
+						{
+							text: 'Le das a reaccionar con una carcajada y sigues. Probablemente sea suficientemente cierta.',
+							score: -1
+						},
+						{ text: 'Lo buscas en Google antes de sumarte al caos.', score: 1 },
+						{
+							text: 'Encuentras el estudio original, compruebas el tamaño muestral y la metodología, y publicas el contexto real.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Estás en un debate y a los treinta segundos te das cuenta de que la otra persona tiene razón y tú estás completamente equivocado. Tú:',
+					answers: [
+						{ text: 'Te redoblas con más fuerza. Ceder ahora sería un ridículo monumental.', score: -2 },
+						{
+							text: 'Te quedas callado, cambias de tema y esperas que nadie haya notado lo que pasó.',
+							score: -1
+						},
+						{ text: 'Cedes el punto con la dignidad más o menos intacta.', score: 1 },
+						{
+							text: 'Cedes de inmediato, elogias su argumento y le pides que explique más. Seguro de ti mismo.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Los científicos anuncian que cada decisión que tomaste un martes fue equivocada. Todas. Sin excepción. Tú:',
+					answers: [
+						{
+							text: 'Cancelas los martes en tu hogar de inmediato. Esto requiere reestructuración.',
+							score: -2
+						},
+						{
+							text: 'Te convences de que la mayoría de los martes estuvieron bien. Sigues adelante.',
+							score: -1
+						},
+						{
+							text: 'Te sientas y revisas honestamente tus decisiones de los martes para encontrar el patrón.',
+							score: 1
+						},
+						{
+							text: 'Analizas sistemáticamente el patrón de errores de los martes, construyes una lista de verificación de decisiones y la implementas.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Llevas 40 minutos en una presentación muy segura sobre queso cuando te das cuenta de que nada de lo que has dicho es preciso. Tú:',
+					answers: [
+						{
+							text: 'Aumentas la confianza. No pueden verte flaquear. Engañas a toda la sala.',
+							score: -2
+						},
+						{
+							text: 'Dices "en fin" y pasas a las preguntas. Que lo descubran ellos.',
+							score: -1
+						},
+						{ text: 'Paras, reconoces el error y das un breve resumen corregido.', score: 1 },
+						{
+							text: 'Paras a mitad de frase, explicas exactamente qué salió mal, proporcionas la información correcta y te disculpas con el queso.',
+							score: 2
+						}
+					]
+				},
+				{
+					text: 'Llegas a lo que creías que era una cena y resulta ser una entrevista de trabajo para un puesto que no quieres, dirigida por un panel de búhos. Tú:',
+					answers: [
+						{
+							text: 'Te comportas de forma absolutamente caótica en la entrevista. Eres diferente a los demás.',
+							score: -2
+						},
+						{
+							text: 'Participas a medias, transmitiendo un "estoy aquí pero tampoco estoy aquí aquí".',
+							score: -1
+						},
+						{
+							text: 'Aclaras cortésmente la situación y preguntas si la asistencia es realmente obligatoria.',
+							score: 1
+						},
+						{
+							text: 'Evalúas qué necesitan los búhos, valoras si tus habilidades encajan y tomas una decisión consciente sobre si participar.',
+							score: 2
+						}
+					]
+				}
+			],
+			resultAriaLabel: 'Tu resultado',
+			brilliant: {
+				h2: 'Piensas como un Brillante.',
+				p: 'Abordas los problemas con curiosidad, rigor y paciencia. Actualizas tus creencias cuando la evidencia lo exige, y prefieres tener razón a sentirte bien. Las preguntas difíciles no te dan miedo. Te fascinan.',
+				scoreLabel: (s) => `Puntuación: ${s > 0 ? '+' : ''}${s}`,
+				exploreLink: 'explora qué significa esto →',
+				exploreLinkClass: 'explore-link brilliant-link',
+				imgAlt: 'Ilustración para el resultado Piensa como un Brillante'
+			},
+			fool: {
+				h2: 'Actúas como un Bufón.',
+				p: 'Vas con el instinto, la confianza y una hermosa imprudencia. Los detalles no te agobian. Haces que los detalles suden. El mundo lo llama caos. Tú lo llamas martes.',
+				scoreLabel: (s) => `Puntuación: ${s}`,
+				exploreLink: 'explora qué significa esto →',
+				exploreLinkClass: 'explore-link fool-link',
+				imgAlt: 'Ilustración para el resultado Actúa como un Bufón'
+			},
+			percentileMessage: (p, result) => {
+				if (result === 'brilliant') {
+					if (p >= 95)
+						return `en el top ${100 - p + 1}% de todos los que han enfrentado al pelícano. Los búhos te tienen en una lista corta.`;
+					if (p >= 80)
+						return `por encima del ${p}% de todos los participantes. El mago te daría un buen tema.`;
+					if (p >= 60) return `superaste al ${p}% de todo el mundo. Un brillante tranquilo y seguro.`;
+					if (p >= 50)
+						return `justo por encima del punto medio, un brillante modesto, que es honestamente el más creíble.`;
+					return `técnicamente brillante. En la práctica, mediocre. El caballo ya lo ha visto antes y tiene algo que decir.`;
+				} else {
+					if (p <= 5)
+						return `en el ${p + 1}% inferior. Estadísticamente eres el pelícano. El pelícano no tiene comentarios.`;
+					if (p <= 20)
+						return `solo el ${p}% de la gente puntuó más bajo. Un bufón comprometido. Profunda y auténticamente en personaje.`;
+					if (p <= 40)
+						return `el ${p}% de la gente puntuó más bajo. Un bufón devoto. El emoji de fuego en el grupo definitivamente fue tuyo.`;
+					if (p <= 55)
+						return `rondando el punto medio. Eres el tipo de bufón que casi no lo era. El caballo está confundido pero te apoya.`;
+					return `por encima del ${p}% de todos los que se sentaron con el pelícano, que es mucho para un bufón. El pelícano está genuinamente desconcertado.`;
+				}
+			},
+			tallying: 'calculando tus resultados…',
+			pelicansCount: (n) => `${n.toLocaleString('es-ES')} personas se han sentado en la silla del pelícano`,
+			restart: 'Hacer el test de nuevo',
+			statsAriaLabel: 'Estadísticas de puntuación',
+			share: 'compartir mi resultado',
+			shareAriaLabel: 'Compartir tu resultado',
+			shareCopied: 'enlace copiado.',
+			shareText: (result) =>
+				result === 'brilliant'
+					? `He sido clasificado oficialmente como un Brillante. La clasificación es vinculante. https://thinklikeabrilliant.pro`
+					: `He sido clasificado oficialmente como un Bufón. La clasificación es vinculante. https://thinklikeabrilliant.pro`
+		},
+		brilliant: {
+			meta: {
+				title: 'El Brillante: Una Guía de Campo',
+				description:
+					'Un análisis profundo, exhaustivo, revisado por expertos y francamente agotador de lo que significa pensar como un Brillante.'
+			},
+			back: 'volver al test',
+			backAriaLabel: 'Volver a la página principal del test',
+			heroAlt: 'Piensa como un Brillante',
+			h1: 'Piensas como un Brillante.',
+			subtitle:
+				'Un análisis profundo, exhaustivo, revisado por expertos y francamente agotador de lo que eso significa para ti, para la sociedad y para el pelícano.',
+			takeAgain: 'Hacerlo de nuevo',
+			takeAgainAriaLabel: 'Hacer el test de nuevo',
+			parts: [
+				{
+					h2: 'Parte I: ¿Qué es exactamente un Brillante?',
+					paragraphs: [
+						'Un Brillante no es simplemente una persona inteligente. Muchas personas inteligentes son idiotas. Un Brillante es una persona que ha hecho las paces con no saber cosas, lo cual es irónico, porque no saber cosas es extremadamente incómodo y la mayoría de la gente preferiría morir antes que quedarse con una pregunta sin respuesta más de cuarenta y cinco segundos.',
+						'El Brillante se sienta con ella. El Brillante prepara una taza de té, acerca una silla y le dice a la pregunta sin respuesta: \u201cHola. Pareces complicada. Me gustaría entenderte. Puede que tarde un tiempo. He despejado mi agenda.\u201d La pregunta sin respuesta, francamente, se queda descolocada. Nadie la había tratado así antes. La mayoría de la gente simplemente busca en Google el primer resultado y sigue. El Brillante lee las citas.',
+						'Esto es a la vez un don y una maldición, porque el Brillante suele llegar tarde a todas partes.'
+					]
+				},
+				{
+					h2: 'Parte II: El origen del Brillante',
+					paragraphs: [
+						'Los historiadores no se ponen de acuerdo sobre cuándo apareció el primer Brillante. Algunos dicen que fue Aristóteles, quien afirmó célebremente que cuanto más sabes, más sabes que no sabes, que es exactamente el tipo de cosa que dice un Brillante justo antes de que todos en la fiesta se muevan a otra habitación.',
+						'Otros dicen que fue quien inventó el estudio de doble ciego, porque esa persona miró toda la historia del autoengaño humano y dijo \u201c¿y si lo hacemos más difícil para mentirnos a nosotros mismos?\u201d y todos los demás dijeron \u201c¿por qué querríamos eso?\u201d y el Brillante dijo \u201cte lo explico\u201d y procedió a hacerlo durante cuarenta años.',
+						'El Brillante siempre ha existido. Era quien en la caverna preguntaba \u201cpero ¿POR QUÉ arde el fuego?\u201d mientras todos los demás solo intentaban cocinar un mamut. Entonces también eran molestos, pero tenían razón, y eventualmente la gente fue aceptándolo.'
+					]
+				},
+				{
+					h2: 'Parte III: Rasgos clave del Brillante (documentados)',
+					paragraphs: [
+						{
+							trait: 'Rasgo 1: Comodidad con equivocarse.',
+							text: ' El Brillante ha descubierto que equivocarse no es, de hecho, mortal. Eso también fue una sorpresa para él. Se equivocó sobre algo y no murió. Actualizó su sistema de creencias. Siguió adelante. Ahora busca activamente situaciones en las que podría equivocarse, lo que sus amigos encuentran agotador y que técnicamente se llama \u201ctener estándares intelectuales\u201d.'
+						},
+						{
+							trait: 'Rasgo 2: La incapacidad de reenviar estadísticas no verificadas.',
+							text: ' Cuando el grupo de WhatsApp enloquece por una estadística de una cuenta llamada @ZonaVerdad47, el Brillante siente una sensación física en el pecho. Abre el hilo. Busca fuentes. Descubre que la estadística fue inventada por alguien que tenía un mal día. Publica la corrección. Nadie reacciona. La publica de todas formas. Siempre la publicará.'
+						},
+						{
+							trait: 'Rasgo 3: Sospechosamente bueno estimando cosas.',
+							text: ' El Brillante ha leído en algún momento algo sobre la estimación de Fermi y nunca se ha recuperado del todo. Ahora puede decirte aproximadamente cuántos afinadores de piano hay en Madrid, cuánto tardaría en caminar hasta la Luna, y cuántos litros de natillas se necesitarían para llenar una piscina olímpica. Nadie ha pedido nada de esto. El Brillante lo ofrece libremente.'
+						},
+						{
+							trait: 'Rasgo 4: Las notas.',
+							text: ' El Brillante toma notas. No solo en el trabajo o en las clases. En todas partes. En el teléfono. En los márgenes de los recibos. En el brazo si hace falta. Tiene una carpeta de notas con 847 mensajes de voz sin clasificar. Tiene un documento llamado \u201cideas - varios\u201d que tiene 34.000 palabras. Nunca ha vuelto a mirarlo. El acto de capturar el pensamiento es lo que importa. El pensamiento está a salvo. El pensamiento ha sido registrado. El Brillante ya puede dormir.'
+						},
+						{
+							trait: 'Rasgo 5: Una relación complicada con la confianza.',
+							text: ' El Brillante es seguro de sí mismo, pero no de forma ruidosa. Es seguro de manera específica y estructural. Dice \u201cno estoy seguro de eso\u201d más que cualquier otro tipo de persona y, paradójicamente, esto le hace más fiable que quienes dicen \u201cdefinitivamente\u201d sobre todo. Si un Brillante dice que está seguro, lo está. Puedes construir una casa sobre eso. Puedes llevarlo a juicio. Puedes mencionarlo en la cena familiar.'
+						}
+					]
+				},
+				{
+					h2: 'Parte IV: El Brillante en situaciones sociales',
+					paragraphs: [
+						'El Brillante en una cena es un espécimen fascinante. Llega ligeramente tarde porque estaba leyendo una cosa más. Trae vino que investigó antes. Escucha más de lo que habla, lo que la gente encuentra o bien refrescante o bien inquietante según si ellos también son Brillantes.',
+						'Cuando surge un tema del que saben poco, el Brillante dice \u201cno sé mucho sobre eso, cuéntame más\u201d. Cuando surge un tema del que saben mucho, dicen \u201cen realidad hay matices interesantes ahí\u201d e inmediatamente sienten la energía del ambiente y deciden guardarlo para alguien que quiera saberlo.',
+						'El Brillante tiene diecisiete opiniones esperando el momento oportuno para compartirlas. Ese momento no ha llegado. Las llevan desde mucho antes. Siguen siendo válidas. Las guardan.'
+					]
+				},
+				{
+					h2: 'Parte V: El Brillante y el pelícano',
+					paragraphs: [
+						'La pregunta del pelícano, la pregunta fundamental de esta evaluación, es crucial. Porque el Brillante, al encontrar un pelícano sobre su pecho sosteniendo su teléfono, no entró en pánico. Observó. Evaluó. Preguntó: ¿qué quiere este pelícano? ¿Es el teléfono específicamente, o el teléfono representa algo? ¿Es este pelícano una metáfora? ¿Es jueves? Son preguntas razonables.',
+						'El Brillante sabe que la mayoría de los problemas, incluyendo los basados en pelícanos, tienen una lógica interna. Encuentra la lógica, encuentra la solución. El pelícano tiene motivaciones. El pelícano tiene un contexto. El pelícano no es simplemente un agente del caos, es un sistema, y los sistemas pueden entenderse.',
+						'El Brillante recuperó su teléfono. También aprendió tres datos sobre el comportamiento de los pelícanos que no sabía antes. Los anotó en su app de notas. El documento se llama \u201cpelícano - varios\u201d. Tiene 400 palabras. Hay un documento de seguimiento llamado \u201cpelícano - lecturas adicionales\u201d. No se arrepiente.'
+					]
+				},
+				{
+					h2: 'Parte VI: Lo que esto significa para tu futuro',
+					paragraphs: [
+						'Vas a estar bien. Más que bien, en realidad. Vas a ser la persona en la sala que sabe de lo que habla, que cambia de opinión cuando la evidencia cambia, y que hace preguntas que hacen que los demás se sientan a la vez un poco vistos y un poco incómodos.',
+						'Tendrás razón sobre las cosas antes que los demás. Esto es a la vez un superpoder y una fuente de constante frustración de baja intensidad que has aprendido a gestionar mediante el diario, los paseos y, ocasionalmente, tener razón en voz alta cuando los riesgos son lo suficientemente altos como para justificarlo.',
+						'Los búhos te respetan. El correo del caballo espera. La oferta del mago sigue en pie.',
+						'Ve y sé brillante. Ya lo eres.'
+					]
+				}
+			]
+		},
+		fool: {
+			meta: {
+				title: 'El Bufón: Una Celebración',
+				description:
+					'Un examen exhaustivo, cariñoso y solo ligeramente preocupado del Bufón. El pelícano ha declinado hacer comentarios.'
+			},
+			back: 'volver al test',
+			backAriaLabel: 'Volver a la página principal del test',
+			heroAlt: 'Actúa como un Bufón',
+			h1: 'Actúas como un Bufón.',
+			subtitle:
+				'Un examen exhaustivo, cariñoso y solo ligeramente preocupado del Bufón: quién es, cómo llegó hasta aquí y por qué el pelícano, sinceramente, no tenía ninguna oportunidad.',
+			takeAgain: 'Hacerlo de nuevo',
+			takeAgainAriaLabel: 'Hacer el test de nuevo',
+			parts: [
+				{
+					h2: 'Parte I: En defensa del Bufón',
+					paragraphs: [
+						'Dejemos algo claro: el Bufón no es tonto. El Bufón simplemente ha decidido que la distancia entre una pregunta y una respuesta no tiene que ser muy larga, y lleva tanto tiempo operando bajo este principio que ahora parece un rasgo de personalidad, porque lo es.',
+						'El Bufón es la persona que ya ha tomado la decisión antes de que termines de explicar la situación. Ya está en movimiento. Ya está comprometido. El plan, en el sentido tradicional de la palabra, se ha omitido, pero una especie de hermosa confianza cinética lo ha sustituido, y la mayoría de las veces, no siempre, pero la mayoría, esto funciona bien.',
+						'El Bufón ha aprendido las cosas a las malas. Cada vez. Sin excepción. Nunca ha leído una advertencia y luego pensado \u201cmenos mal que la leí\u201d. La lee después del hecho, asiente lentamente y dice \u201csí, tiene sentido\u201d.'
+					]
+				},
+				{
+					h2: 'Parte II: El Bufón histórico',
+					paragraphs: [
+						'El Bufón existe desde el comienzo de la historia registrada y posiblemente antes. Casi con toda certeza fue un Bufón quien tocó el fuego primero para ver qué pasaba. Casi con toda certeza fue un Bufón quien se subió a un tronco y flotó por un río e inventó los barcos, no porque tuviera un plan para inventar barcos, sino porque se subió a un tronco. El barco fue una sorpresa para todos, incluido él.',
+						'Los bufones de la corte eran llamados Bufones, y eran los únicos a quienes se les permitía decirle la verdad al rey. Piénsalo. La persona con aparentemente menor deferencia hacia la convención era, estructuralmente hablando, la persona más honesta de la sala. El Bufón siempre ha sabido cosas. Solo que las ha sabido en una dirección diferente.',
+						'Muchos de los grandes momentos de la historia humana fueron causados por alguien que hizo algo que probablemente no debería haber hecho sin pensarlo demasiado antes. El Bufón es el motor del progreso accidental. No pretendía descubrirlo. Solo estaba por la zona.'
+					]
+				},
+				{
+					h2: 'Parte III: Rasgos clave del Bufón (observados en campo)',
+					paragraphs: [
+						{
+							trait: 'Rasgo 1: Confianza que precede a la información.',
+							text: ' El Bufón confía primero y luego reúne evidencia según la necesita, lo cual es técnicamente al revés, pero tiene la ventaja clara de la velocidad. Cuando la persona cautelosa termina su evaluación de riesgos, el Bufón ya ha empezado, posiblemente fracasado, se ha reorganizado y ha vuelto a empezar con más información de la que habría dado la evaluación de riesgos. Esto se llama \u201caprendizaje empírico\u201d cuando los científicos lo hacen en laboratorios. Cuando lo hace el Bufón, se llama \u201cel incidente\u201d.'
+						},
+						{
+							trait: 'Rasgo 2: Una capacidad impecable para improvisar.',
+							text: ' El Bufón no tiene un plan B. Tiene algo mejor: la total confianza en que lo resolverá cuando llegue. Y normalmente lo hace. No siempre con elegancia. No siempre sin daños colaterales. Pero llega. Lo resuelve. Hay algo genuinamente notable en una persona que puede entrar en una situación sin preparación y salir habiéndola manejado, aunque \u201cmanejado\u201d haga mucho trabajo pesado en esa frase.'
+						},
+						{
+							trait: 'Rasgo 3: El encanto.',
+							text: ' Ya sea un pelícano, un funcionario de aduanas o un caballo con una queja formal, el Bufón genuinamente cree que puede hablar para entrar o salir de cualquier situación. Y lo hace no a través de la retórica cuidadosa o la comunicación estratégica, sino a través de pura presencia y la energía de alguien que nunca ha considerado que esto podría no funcionar. El pelícano, seamos honestos, estaba desconcertado.'
+						},
+						{
+							trait: 'Rasgo 4: Lealtad al asunto.',
+							text: ' Si el Bufón se compromete con algo, una broma, un plan, una palabra mal pronunciada, una estadística incorrecta que ya ha compartido con quince personas, lo lleva hasta el final. Cambiar de rumbo a mitad de camino requeriría admitir que la dirección inicial era equivocada, lo cual es algo muy de Brillante y que el Bufón encuentra casi físicamente imposible. Es un defecto. Es también, de alguna manera, una forma de integridad.'
+						},
+						{
+							trait: 'Rasgo 5: El problema del martes.',
+							text: ' Todo Bufón tiene un martes. Quizás no sea literalmente el martes. Quizás sea el presupuesto. Quizás sea leer antes de aceptar. Quizás sea no responder correos a las 2 de la madrugada. Hay un patrón. El Bufón sabe del patrón. El Bufón sabe del patrón desde hace varios años. El Bufón no ha abordado el patrón. El Bufón, sin embargo, ha nombrado el patrón, lo cual es el primer paso, y eso cuenta para algo, y el Bufón está orgulloso de ello.'
+						}
+					]
+				},
+				{
+					h2: 'Parte IV: El Bufón en situaciones sociales',
+					paragraphs: [
+						'El Bufón en una cena es un acontecimiento. Llega con una historia ya en marcha. La historia involucra algo que pasó de camino aquí y ya es más interesante que todo lo que trajo el Brillante, que es una botella de vino investigada y diecisiete opiniones sobre geopolítica que ha decidido no compartir.',
+						'El Bufón dirá algo de lo que se arrepentirá de inmediato y luego construirá sobre ello en lugar de retroceder. El Bufón compartirá una estadística que no puede fundamentar. El Bufón entrará en un debate para el que no está preparado y lo peleará solo con vibraciones, perdiendo terreno lentamente y pivotando suavemente cada vez sin conceder técnicamente el punto.',
+						'Todos en la fiesta recuerdan al Bufón. No siempre con cariño, no siempre correctamente, pero siempre.'
+					]
+				},
+				{
+					h2: 'Parte V: El Bufón y el pelícano',
+					paragraphs: [
+						'El pelícano despertó al Bufón. Esto ya fue un error por parte del pelícano, el Bufón antes del café es una criatura completamente diferente, pero dejemos eso de lado. El primer instinto del Bufón fue negociar hablando idioma pájaro. No habla idioma pájaro. Habla idioma pájaro de la misma forma que habla francés: con confianza y de forma incorrecta, y de algún modo esto comunica algo, porque la confianza en un idioma es el noventa por ciento del idioma.',
+						'El pelícano no fue conquistado con éxito. El teléfono fue recuperado eventualmente por medios poco claros. El Bufón tiene ahora una gran historia al respecto. La historia mejora cada vez que la cuenta. Para el año que viene, el pelícano habrá sido tres pelícanos y el teléfono habrá sido toda su cartera.',
+						'El pelícano ha declinado hacer comentarios.'
+					]
+				},
+				{
+					h2: 'Parte VI: El correo del caballo',
+					paragraphs: [
+						'Lo leíste y no respondiste. Hablemos de eso.',
+						'El caballo te escribió. El caballo, que tiene pezuñas y no tiene pulgares oponibles y por tanto escribió todo ese correo con software de dictado o pura determinación, contactó formalmente con confirmación de lectura activada. No fue una comunicación casual. Fue el caballo diciendo: tengo algo que decirte y quiero saber que lo has oído.',
+						'Lo leíste y no respondiste.',
+						'Está bien. Eso es muy tú. El correo sigue ahí. Ha estado ahí un tiempo. El caballo sabe que lo leíste. El caballo espera. El caballo no tiene otros planes; los caballos no tienen, notoriamente, agendas llenas. Algún día abrirás ese correo y contendrá algo que necesitabas escuchar y estarás contento, a tu manera particular de Bufón, de haber llegado a leerlo finalmente.',
+						'Responde cuando estés listo. El caballo no va a ningún lado. Literalmente. Es un caballo.'
+					]
+				},
+				{
+					h2: 'Parte VII: En conclusión, eres magnífico',
+					paragraphs: [
+						'El mundo necesita Brillantes, sí. El mundo necesita personas que lean las notas al pie, comprueben los tamaños muestrales y programen reuniones de seguimiento con caballos. El mundo genuinamente no puede funcionar sin ellos.',
+						'Pero el mundo también te necesita a ti. El mundo necesita a la persona que se sube al tronco antes de haber descubierto que flota. El mundo necesita a la persona que le habla a un pelícano en idioma pájaro y de alguna manera funciona. El mundo necesita a la persona que dice \u201cen fin\u201d y pasa a las preguntas durante la presentación de queso de su vida, se sacude el polvo y lo intenta de nuevo.',
+						'El Bufón no tiene un plan. El Bufón tiene algo mejor: una completa y total disposición a estar en la situación y resolverlo. Eso no es nada. Eso es, en realidad, extraordinario.',
+						'El martes es mañana. Esta vez tomarás una decisión diferente. O no, y tendrás otra gran historia. De cualquier manera, va a ser algo.'
+					]
+				}
+			]
+		}
 	}
 };

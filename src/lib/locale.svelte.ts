@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'zh' | 'de';
+export type Locale = 'en' | 'zh' | 'de' | 'es';
 
 let _current = $state<Locale>('en');
 
