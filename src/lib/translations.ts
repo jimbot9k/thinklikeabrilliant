@@ -50,6 +50,10 @@ interface Translation {
 		pelicansCount: (n: number) => string;
 		restart: string;
 		statsAriaLabel: string;
+		share: string;
+		shareAriaLabel: string;
+		shareCopied: string;
+		shareText: (result: 'brilliant' | 'fool') => string;
 	};
 	brilliant: {
 		meta: { title: string; description: string };
@@ -336,7 +340,14 @@ export const translations: Record<Locale, Translation> = {
 			tallying: 'tallying your results…',
 			pelicansCount: (n) => `${n.toLocaleString('en-US')} people have sat in the pelican chair`,
 			restart: 'Take the quiz again',
-			statsAriaLabel: 'Score statistics'
+			statsAriaLabel: 'Score statistics',
+			share: 'share my result',
+			shareAriaLabel: 'Share your result',
+			shareCopied: 'link copied.',
+			shareText: (result) =>
+				result === 'brilliant'
+					? `I have been officially classified as a Brilliant. The classification is binding. https://thinklikeabrilliant.com`
+					: `I have been officially classified as a Fool. The classification is binding. https://thinklikeabrilliant.com`
 		},
 		brilliant: {
 			meta: {
@@ -679,7 +690,14 @@ export const translations: Record<Locale, Translation> = {
 			tallying: '正在统计你的结果……',
 			pelicansCount: (n) => `${n.toLocaleString('zh-CN')} 人坐过鹈鹕椅`,
 			restart: '再测一次',
-			statsAriaLabel: '得分统计'
+			statsAriaLabel: '得分统计',
+			share: '分享我的结果',
+			shareAriaLabel: '分享你的测评结果',
+			shareCopied: '链接已复制。',
+			shareText: (result) =>
+				result === 'brilliant'
+					? `我已被正式认定为智者。该认定具有约束力。 https://thinklikeabrilliant.com`
+					: `我已被正式认定为逗比。该认定具有约束力。 https://thinklikeabrilliant.com`
 		},
 		brilliant: {
 			meta: {
@@ -1115,7 +1133,14 @@ export const translations: Record<Locale, Translation> = {
 			tallying: 'Ergebnisse werden ausgewertet…',
 			pelicansCount: (n) => `${n.toLocaleString('de-DE')} Menschen haben im Pelikan-Stuhl gesessen`,
 			restart: 'Quiz wiederholen',
-			statsAriaLabel: 'Punktestatistik'
+			statsAriaLabel: 'Punktestatistik',
+			share: 'Ergebnis teilen',
+			shareAriaLabel: 'Dein Ergebnis teilen',
+			shareCopied: 'Link kopiert.',
+			shareText: (result) =>
+				result === 'brilliant'
+					? `Ich wurde offiziell als Genie eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.com`
+					: `Ich wurde offiziell als Narr eingestuft. Die Einstufung ist bindend. https://thinklikeabrilliant.com`
 		},
 		brilliant: {
 			meta: {

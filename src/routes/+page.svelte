@@ -18,6 +18,20 @@
 	let statTotal = $state(0);
 	let statsLoading = $state(false);
 	let statsError = $state(false);
+	let shareCopied = $state(false);
+
+	async function shareResult() {
+		const text = t.shareText(result);
+		if (navigator.share) {
+			try {
+				await navigator.share({ text });
+				return;
+			} catch {}
+		}
+		await navigator.clipboard.writeText(text);
+		shareCopied = true;
+		setTimeout(() => (shareCopied = false), 2000);
+	}
 
 	async function submitScore(score: number) {
 		statsLoading = true;
@@ -172,6 +186,11 @@
 					<p class="stat-count">{t.pelicansCount(statTotal)}</p>
 				</div>
 			{/if}
+				<button
+					class="share-btn"
+					aria-label={t.shareAriaLabel}
+					onclick={shareResult}
+				>{shareCopied ? t.shareCopied : t.share}</button>
 				<button class="restart-btn" onclick={restart}>{t.restart}</button>
 			</div>
 		{/if}
@@ -383,6 +402,25 @@
 		color: var(--text-ghost) !important;
 		font-variant-numeric: tabular-nums;
 		margin-bottom: 1.25rem !important;
+	}
+
+	.share-btn {
+		background: none;
+		border: 1px solid var(--border);
+		color: var(--text-muted);
+		border-radius: 10px;
+		padding: 0.8rem 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		margin-bottom: 0.75rem;
+		transition: border-color 0.15s, color 0.15s;
+		width: 100%;
+	}
+
+	.share-btn:hover {
+		border-color: var(--accent);
+		color: var(--text);
 	}
 
 	.restart-btn {
