@@ -1,13 +1,14 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
 	import favicon from '$lib/assets/favicon.svg';
-	import { onMount } from 'svelte';
 	import { locale } from '$lib/locale.svelte';
 	import { translations } from '$lib/translations';
-	import { inject } from '@vercel/analytics';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights';
+	import { onMount } from 'svelte';
 
-	inject();
 	injectSpeedInsights();
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	let { children } = $props();
 
