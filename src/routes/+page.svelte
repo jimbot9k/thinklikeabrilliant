@@ -158,6 +158,11 @@
 			</div>
 
 			<div class="question-block" aria-live="polite" aria-atomic="true">
+				<img
+					class="question-img"
+					src="/{currentQuestion + 1}.png"
+					alt={t.questionImgAlts[currentQuestion]}
+				/>
 				<h2 id="current-question">{t.questions[currentQuestion].text}</h2>
 			</div>
 
@@ -264,6 +269,14 @@
 
 	.question-block {
 		margin-bottom: 2rem;
+	}
+
+	.question-img {
+		display: block;
+		width: 85%;
+		height: auto;
+		border-radius: 10px;
+		margin: 0 auto 1.25rem;
 	}
 
 	.intro {

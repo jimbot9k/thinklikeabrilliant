@@ -27,6 +27,7 @@ interface Translation {
 		};
 		questionLabel: (current: number, total: number) => string;
 		progressAriaLabel: (current: number, total: number) => string;
+		questionImgAlts: string[];
 		questions: Array<{ text: string; answers: Array<{ text: string; score: number }> }>;
 		resultAriaLabel: string;
 		brilliant: {
@@ -113,6 +114,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `Question ${c} of ${t}`,
 			progressAriaLabel: (c, t) => `Quiz progress, question ${c} of ${t}`,
+			questionImgAlts: [
+				'A pelican sits on a person’s chest holding their phone, looking deeply unfriendly',
+				'A wizard’s message appears in a phone’s DM inbox, offering infinite knowledge on one topic',
+				'A phone screen full of confidently delivered but completely wrong TikTok videos',
+				'A shadow holding a gym membership card, its credit score chart looking suspiciously better than yours',
+				'A horse at a desk composing a formal email with a read receipt enabled',
+				'A group chat exploding with fire emojis over a screenshot from a 47-follower account',
+				'Two people mid-debate, one slowly realising they are completely wrong',
+				'Scientists presenting a chart of bad decisions, every single one on a Tuesday',
+				'A presenter frozen in front of a cheese board, realising nothing they said was accurate',
+				'An owl panel conducting a job interview at what was supposed to be a dinner party'
+			],
 			questions: [
 				{
 					text: 'You wake up and a pelican is sitting on your chest. It is holding your phone. It does not look friendly. You:',
@@ -559,6 +572,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `第 ${c} 题，共 ${t} 题`,
 			progressAriaLabel: (c, t) => `测验进度，第 ${c} 题，共 ${t} 题`,
+			questionImgAlts: [
+				'一只鹈鹕坐在一个人的胸口，拿着他们的手机，神情不善',
+				'一条巫师的消息出现在手机的DM收件箱中，提供关于一个主题的无限知识',
+				'一个充满自信但完全错误的TikTok视频的手机屏幕',
+				'一个影子拿着健身房会员卡，它的信用评分表看起来明显比你的好',
+				'一匹马坐在桌前，撰写一封附有已读回执的正式电子邮件',
+				'一个群聊因来自47名粉丝账户的截图而爆发出大量火焰表情符号',
+				'两人正在争论，其中一人慢慢意识到自己完全错了',
+				'科学家展示一张全都发生在星期二的错误决策图表',
+				'一名演示者在奶酪板前僵住，意识到所说的一切都是错误的',
+				'一群猫头鹰在原本应该是晚宴的场合组成评审团进行招聘面试'
+			],
 			questions: [
 				{
 					text: '你一觉醒来，发现一只鹈鹕坐在你胸口，叼着你的手机，神情不善。你会：',
@@ -906,6 +931,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `Frage ${c} von ${t}`,
 			progressAriaLabel: (c, t) => `Quiz-Fortschritt, Frage ${c} von ${t}`,
+			questionImgAlts: [
+				'Ein Pelikan sitzt auf der Brust einer Person und hält ihr Telefon, sieht alles andere als freundlich aus',
+				'Eine Nachricht eines Zauberers erscheint im DM-Posteingang eines Handys und bietet unendliches Wissen zu einem Thema an',
+				'Ein Handybildschirm voller TikTok-Videos, die falsche Informationen mit größter Überzeugung vortragen',
+				'Ein Schatten hält eine Fitnessstudio-Mitgliedskarte, sein Kreditwert-Diagramm sieht verdächtig besser aus als deins',
+				'Ein Pferd an einem Schreibtisch verfasst eine formelle E-Mail mit aktivierter Lesebestätigung',
+				'Ein Gruppen-Chat explodiert mit Feuer-Emojis über einem Screenshot von einem Account mit 47 Followern',
+				'Zwei Personen mitten in einer Debatte, eine erkennt langsam, dass sie völlig falsch liegt',
+				'Wissenschaftler präsentieren ein Diagramm schlechter Entscheidungen, ausnahmslos alle an einem Dienstag',
+				'Ein Referent erstarrt vor einem Käsebrett und erkennt, dass nichts davon stimmte',
+				'Ein Eulen-Panel führt ein Vorstellungsgespräch durch, wo eigentlich eine Dinnerparty erwartet wurde'
+			],
 			questions: [
 				{
 					text: 'Du wachst auf und ein Pelikan sitzt auf deiner Brust. Er hält dein Handy. Er sieht nicht freundlich aus. Du:',
@@ -1353,6 +1390,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `Pregunta ${c} de ${t}`,
 			progressAriaLabel: (c, t) => `Progreso del test, pregunta ${c} de ${t}`,
+			questionImgAlts: [
+				'Un pelícano sentado sobre el pecho de una persona sosteniendo su teléfono, con expresión nada amistosa',
+				'Un mensaje de un mago aparece en la bandeja de entrada de DM de un teléfono, ofreciendo conocimiento infinito sobre un tema',
+				'Una pantalla de teléfono llena de vídeos de TikTok que difunden información errónea con total convicción',
+				'Una sombra que sostiene una tarjeta de membresía del gimnasio, su gráfico de crédito sospechosamente mejor que el tuyo',
+				'Un caballo en un escritorio redactando un correo electrónico formal con acuse de recibo activado',
+				'Un chat grupal explotando con emojis de fuego por una captura de pantalla de una cuenta de 47 seguidores',
+				'Dos personas a mitad de un debate, una dándose cuenta lentamente de que está completamente equivocada',
+				'Científicos presentando un gráfico de malas decisiones, todas y cada una un martes',
+				'Un presentador paralizado frente a una tabla de quesos al darse cuenta de que nada de lo que dijo era correcto',
+				'Un panel de búhos realizando una entrevista de trabajo donde se suponía que habría una cena'
+			],
 			questions: [
 				{
 					text: 'Te despiertas y hay un pelícano sentado sobre tu pecho. Tiene tu teléfono. No parece amigable. Tú:',
@@ -1791,6 +1840,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `Question ${c} sur ${t}`,
 			progressAriaLabel: (c, t) => `Progression du test, question ${c} sur ${t}`,
+			questionImgAlts: [
+				'Un pélican assis sur la poitrine d’une personne tenant son téléphone, l’air clairement peu aimable',
+				'Un message de sorcier apparaît dans la boîte de réception DM d’un téléphone, offrant une connaissance infinie sur un sujet',
+				'Un écran de téléphone rempli de vidéos TikTok diffusant de fausses informations avec une totale assurance',
+				'Une ombre tenant une carte de membre de salle de sport, son graphique de crédit suspectement meilleur que le vôtre',
+				'Un cheval à un bureau rédigeant un e-mail formel avec accusé de réception activé',
+				'Un chat de groupe explosant d’emojis feu à cause d’une capture d’écran d’un compte à 47 abonnés',
+				'Deux personnes au milieu d’un débat, l’une réalisant lentement qu’elle a complètement tort',
+				'Des scientifiques présentant un graphique de mauvaises décisions, toutes prises un mardi',
+				'Un présentateur figé devant un plateau de fromages en réalisant que rien de ce qu’il a dit n’était exact',
+				'Un panel de hiboux conduisant un entretien d’embauche là où une soirée dîner était attendue'
+			],
 			questions: [
 				{
 					text: 'Tu te r\u00e9veilles et un p\u00e9lican est assis sur ta poitrine. Il tient ton t\u00e9l\u00e9phone. Il n\u2019a pas l\u2019air aimable. Tu\u00a0:',
@@ -2144,6 +2205,18 @@ export const translations: Record<Locale, Translation> = {
 			},
 			questionLabel: (c, t) => `質問 ${c} / ${t}`,
 			progressAriaLabel: (c, t) => `テストの進捗、${t}問中${c}問目`,
+			questionImgAlts: [
+				'友好的ではない表情でスマートフォンを持ち、人の胸の上に座るペリカン',
+				'1つのトピックについて無限の知識を提供する魔法使いのメッセージがスマートフォンのDM受信箱に届く',
+				'自信たっぷりに完全に間違った内容を説明するTikTok動画で埋め尽くされたスマートフォン画面',
+				'ジム会員証を持つ影。その信用評分グラフはあなたのものより明らかに良い',
+				'机に向かい、開封確認付きの正式なメールを作成している馬',
+				'47フォロワーのアカウントからのスクリーンショットをめぐって炎の絵文字であふれかえるグループチャット',
+				'議論の最中の二人。一方がゆっくりと自分が完全に間違っていると気づいている',
+				'科学者がすべて火曜日の悪い決断だけを示すグラフを提示している',
+				'チーズボードの前で固まったプレゼンター。言ったことが何一つ正確ではなかったと気づいた瞬間',
+				'ディナーパーティーのはずだった場所でフクロウのパネルが就職面接を実施している'
+			],
 			questions: [
 				{
 					text: '目が覚めると、ペリカンがあなたの胸の上に座っています。あなたのスマートフォンを持っています。友好的には見えません。あなたは：',
